@@ -6,32 +6,67 @@
             <div class="inputText">
                 <span style="font-size: 20px">campus email</span>
             </div>
-            <input type="text">
+            <input type="email" name="email" id="email-input" v-model="email">
         </div>
         <div class="input">
             <div class="inputText">
                 <span style="font-size: 20px">password</span>
             </div>
-            <input type="password" name="password" id="password-input">
+            <input type="password" name="password" id="password-input" v-model="password">
         </div>
-        <button type="submit" class="submit">login</button>
+        <button type="submit" class="submit" v-on:click="login">login</button>
     </div>
 </template>
+
+<script setup>
+import api from "../service/api.js";
+
+import {ref} from "vue";
+
+let email = ref();
+let password = ref();
+let responseContent = ref({});
+
+async function login(){
+    try {
+        const response = await api.get("/m1/2604789-0-default/user/login" ,{
+            email:email.value,
+            password:password.value
+        }).then(result => {
+            //通过response的then来返回请求获得的数据
+            // console.log(result);
+            responseContent.value = result;
+
+            //判断如果response的error信息存在，就alert错误信息，并且重置login页面
+            if (responseContent.value.error_message){
+                //提示账户错误的原因❌
+                alert(responseContent.value.error_message);
+                email.value = null;
+                password.value = null;
+            }else {
+                //设置通行token
+                localStorage.setItem('accessToken',responseContent.value.data.accessToken)
+                localStorage.setItem('refreshToken',responseContent.value.data.refreshToken)
+            }
+        });
+    }catch (error){
+        console.log(error);
+    }
+}
+</script>
 <style>
+
 span{
     font-family: 'Anton', sans-serif;
     font-weight: bold;
     font-size:40px
 }
-</style>
-<script setup>
 
-</script>
-<style>
 .container{
     display: flex;
     gap: 20px;
 }
+
 input{
     color: #2D328E;
     background-color: white;
@@ -41,6 +76,7 @@ input{
     border: 2px solid #2D328E;
     border-radius: 0 32px 32px 0;
 }
+
 .input{
     display: flex;
     justify-content: center;
@@ -48,10 +84,12 @@ input{
     flex-wrap: nowrap;
     flex-direction: row;
 }
+
 .input:hover{
     transform: scale(1.2);
     transition: 0.5s;
 }
+
 input:focus {
     outline: none;
 }
@@ -66,15 +104,19 @@ input:focus {
     color: white;
     padding: 10px;
 }
+
 .submit{
     font-family: 'Anton', sans-serif;
     font-size: 25px;
 }
+
 .submit:hover{
     transform: scale(1.05);
     transition: 0.5s;
 }
+
 .submit:focus{
     outline: none;
 }
+
 </style>
