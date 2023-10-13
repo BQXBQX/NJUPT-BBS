@@ -30,7 +30,7 @@ const routes = [
 
 // 创建路由对象
 const router = createRouter({
-    history: createWebHistory(),		//hash路由模式
+    history: createWebHistory(),
     routes
 })
 
