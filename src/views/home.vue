@@ -33,7 +33,7 @@ import PostItem from "../components/postItem.vue";
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    gap: 30px;
+    gap: 50px;
     top: 70px;
     left: 0;
     right: 0;
