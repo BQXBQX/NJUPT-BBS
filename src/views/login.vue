@@ -66,6 +66,7 @@ span{
 }
 
 .container{
+    margin: 10%;
     display: flex;
     gap: 20px;
 }

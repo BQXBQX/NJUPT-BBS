@@ -41,18 +41,22 @@
 
 <script setup>
 import { ref } from 'vue';
+import router from "../router/index.js";
 
 // 默认选中首页
 const activeTab = ref('home');
 
 // 点击导航项时切换activeTab的值
 const handleTabClick = (tab) => {
+    console.log(tab)
+    router.push(tab);
     activeTab.value = tab;
 };
 </script>
 
 <style>
 .nav-bottom-container {
+    z-index: 2;
     position: fixed;
     bottom: 0;
     left: 0;
