@@ -1,6 +1,6 @@
 <template>
     <div class = postItemContainer>
-        <div class="postItemNav">
+        <div class="postItemTopNav">
             <div class="userInformation">
                 <div class="avatar">
                     <img src="../assets/avatar.png" alt="avatar" width="50" height="50">
@@ -15,6 +15,9 @@
         <div class="postItemContent">
             <span class="textContent">日前，国家自然科学基金委员会公布了2023年国家自然科学基金集中接收申请项目评审结果，我校获批立项资助125项（其中，国家杰出青年科学基金项目1项、优秀青年科学基金项目4项、重大研究计划培育项目1项、面上项目40项、青年科学基金项目79项），获资助直接经费5618.5万元。获资助项目数较2022年同期增长22.55%，经费数较2022年同期增长20.75%，获资助项目数和经费数均再创历史新高！此外，国家级人才类项目数再创历史新高！</span>
         </div>
+        <div class="postItemBottomNav">
+            
+        </div>
     </div>
 </template>
 <script setup>
@@ -22,12 +25,9 @@
 </script>
 <style>
 .postItemContainer{
-    top: 60px;
-    margin: 5%;
-    position: absolute;
-    left: 0;
+
 }
-.postItemNav{
+.postItemTopNav{
     display: flex;
     flex-direction: row;
     align-content: center;

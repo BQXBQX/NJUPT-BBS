@@ -25,6 +25,7 @@ function topHandleTabClick(tab){
 </script>
 <style>
 .nav-top-container {
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
