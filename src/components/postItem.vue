@@ -41,7 +41,11 @@
 </script>
 <style>
 .postItemContainer{
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 .postItemTopNav{
     display: flex;
@@ -66,6 +70,10 @@
 p{
     margin: 0;
     height: 25px;
+}
+.textContent{
+    all:unset;
+    text-align: left;
 }
 .userName{
     font-weight: bold;
