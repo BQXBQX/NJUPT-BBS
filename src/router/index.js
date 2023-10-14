@@ -6,6 +6,7 @@ import {
 import Welcome from "../views/welcome.vue";
 import Login from "../views/login.vue";
 import Home from "../views/home.vue";
+import Register from "../views/register.vue";
 
 const routes = [
 // 路由的默认路径
@@ -25,6 +26,10 @@ const routes = [
     {
         path: '/home',
         component: Home
+    },
+    {
+        path: '/register',
+        component: Register
     },
 ]
 

@@ -1,14 +1,14 @@
 import axios from "axios";
 
 const service = axios.create({
-    baseURL:"http://127.0.0.1:4523",
+    baseURL:"http://127.0.0.1:4523/m1/2604789-0-default/user",
     timeout:5000,
 })
 
 //请求拦截器
 service.interceptors.request.use(
     config =>{
-        console.log(config)
+        // console.log(config)
         return config;
     },error => {
         console.log(error);
@@ -17,7 +17,7 @@ service.interceptors.request.use(
 
 //相应拦截器
 service.interceptors.response.use(response=>{
-    console.log(response)
+    // console.log(response)
     return response.data;
 },error => {
     console.log(error.response.status);
