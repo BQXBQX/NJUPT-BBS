@@ -1,9 +1,14 @@
 <template>
-  this is home
-  <BottomNav></BottomNav>
+    <TopNav></TopNav>
+    <PostItem></PostItem>
+    <PostItem></PostItem>
+    <PostItem></PostItem>
+    <BottomNav></BottomNav>
 </template>
 <script setup>
 import BottomNav from "../components/bottomNav.vue";
+import TopNav from "../components/TopNav.vue";
+import PostItem from "../components/postItem.vue";
 </script>
 <style>
 .icon{
