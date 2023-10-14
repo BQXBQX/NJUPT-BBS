@@ -6,7 +6,6 @@
             <PostItem></PostItem>
             <PostItem></PostItem>
         </div>
-        <BottomNav></BottomNav>
     </div>
 </template>
 <script setup>

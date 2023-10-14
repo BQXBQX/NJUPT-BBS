@@ -3,7 +3,7 @@
         <div class="postItemTopNav">
             <div class="userInformation">
                 <div class="avatar">
-                    <img src="../assets/avatar.png" alt="avatar" width="50" height="50">
+                    <img src="../assets/avatar.jpeg" alt="avatar" width="50" height="50">
                 </div>
                 <div class="user">
                     <p class="userName">BQXBQX</p>

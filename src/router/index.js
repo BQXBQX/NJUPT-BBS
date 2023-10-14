@@ -7,6 +7,10 @@ import Welcome from "../views/welcome.vue";
 import Login from "../views/login.vue";
 import Home from "../views/home.vue";
 import Register from "../views/register.vue";
+import Partition from "../views/partition.vue";
+import Chat from "../views/chat.vue";
+import Mine from "../views/mine.vue";
+import Show from "../views/show.vue";
 
 const routes = [
 // 路由的默认路径
@@ -24,12 +28,32 @@ const routes = [
         component: Login
     },
     {
-        path: '/home',
-        component: Home
-    },
-    {
         path: '/register',
         component: Register
+    },
+    {
+        path: '/show',
+        //当进入到show页面时，自动更新到home路由上
+        redirect:"/home",
+        component: Show,
+        children:[
+            {
+                path: '/home',
+                component: Home
+            },
+            {
+                path: '/partition',
+                component: Partition
+            },
+            {
+                path: '/chat',
+                component: Chat
+            },
+            {
+                path: '/mine',
+                component: Mine
+            },
+        ]
     },
 ]
 
