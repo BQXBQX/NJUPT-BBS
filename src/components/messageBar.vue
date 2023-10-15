@@ -57,11 +57,11 @@ function test(){
     gap: 10px;
 }
 .rightBar{
+    padding: 5px;
     height: 25px;
-    width: 40px;
     background-color: #2D328E;
     color: white;
-    border-radius: 12px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     align-content: center;

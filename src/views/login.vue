@@ -37,7 +37,7 @@ async function login(){
             password:password.value
         }).then(result => {
             //通过response的then来返回请求获得的数据
-            // console.log(result);
+            console.log(result);
             responseContent.value = result;
 
             //判断如果response的error信息存在，就alert错误信息，并且重置login页面
