@@ -11,7 +11,7 @@ import Partition from "../views/partition.vue";
 import Chat from "../views/chat.vue";
 import Mine from "../views/mine.vue";
 import Show from "../views/show.vue";
-import UserMessage from "../views/userMessage.vue";
+import MineMessage from "../views/mineMessage.vue";
 
 const routes = [
 // 路由的默认路径
@@ -33,8 +33,8 @@ const routes = [
         component: Register
     },
     {
-        path: '/userMessage',
-        component: UserMessage
+        path: '/minemessage',
+        component: MineMessage
     },
     {
         path: '/show',

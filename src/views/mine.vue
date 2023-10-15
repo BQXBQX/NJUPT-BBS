@@ -51,16 +51,17 @@ let navMineMessage = ref({
     justify-content: center;
 }
 .navUserInformation{
-    padding: 5px;
+    background-color:white ;
+    padding: 10px;
     width: 100%;
     box-sizing: border-box;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 .mineContainer{
+    background-color: #e6e6e6;
     flex-direction: column;
     position: absolute;
     display: flex;
-    top: 10px;
+    top:0px;
     bottom: 84px;
     width: 100%;
 }

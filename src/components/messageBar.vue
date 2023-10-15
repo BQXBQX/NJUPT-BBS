@@ -24,8 +24,9 @@ function test(){
 </script>
 <style>
 .messageBarItemContainer{
-    box-shadow: 0 0 2px gray;
+    box-shadow: 0 0 2px #e6e6e6;
     height: 60px;
+    background-color: white;
 }
 .text{
     color: black;

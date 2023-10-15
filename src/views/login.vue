@@ -32,7 +32,7 @@ let responseContent = ref({});
 
 async function login(){
     try {
-        const response = await api.get("/login" ,{
+        const response = await api.get("/user/login" ,{
             email:email.value,
             password:password.value
         }).then(result => {

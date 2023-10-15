@@ -10,11 +10,12 @@
 </template>
 <script setup>
 import BottomNav from "../components/bottomNav.vue";
-import TopNav from "../components/TopNav.vue";
+import TopNav from "../components/topHomeNav.vue";
 import PostItem from "../components/postItem.vue";
 </script>
 <style>
 .home{
+    background-color: #e6e6e6;
     position: relative;
     height: 100%;
     width: 100%;
@@ -31,9 +32,8 @@ import PostItem from "../components/postItem.vue";
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    gap: 50px;
-    top: 70px;
+    gap: 20px;
+    top: 65px;
     left: 0;
     right: 0;
     bottom: 84px;

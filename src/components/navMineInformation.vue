@@ -39,7 +39,7 @@ const props = defineProps({
     message:Object
 })
 function toUserMessage(){
-    router.push("usermessage")
+    router.push("minemessage")
 }
 </script>
 <style>

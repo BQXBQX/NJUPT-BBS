@@ -41,6 +41,8 @@
 </script>
 <style>
 .postItemContainer{
+    padding: 10px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
