@@ -33,6 +33,7 @@
 </script>
 <style>
 .postBottomContainer{
+    justify-content: space-between;
     display: flex;
     position: absolute;
     bottom: 0;
@@ -59,7 +60,7 @@
 }
 .postBottomLeft{
     padding: 10px;
-    width: 250px;
+    width: 90%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;

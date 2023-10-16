@@ -13,6 +13,7 @@ import Mine from "../views/mine.vue";
 import Show from "../views/show.vue";
 import MineMessage from "../views/mineMessage.vue";
 import Post from "../views/post.vue";
+import Test from "../views/test.vue";
 
 const routes = [
 // 路由的默认路径
@@ -40,6 +41,10 @@ const routes = [
     {
         path: '/post',
         component: Post
+    },
+    {
+        path: '/test',
+        component: Test
     },
     {
         path: '/show',
