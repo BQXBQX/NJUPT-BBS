@@ -32,13 +32,13 @@ let email = ref();
 let password = ref();
 let verifiedCode = ref();
 
-function register(){
-    const response = api.post("/user/register",{
+async function register(){
+    const response = await api.post("/user/register",{
         email:email.value,
         password:password.value,
         verifiedCode:verifiedCode.value
     })
-    console.log(response);
+    console.log(response)
 }
 
 </script>

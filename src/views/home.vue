@@ -15,6 +15,10 @@ import PostItem from "../components/postItem.vue";
 </script>
 <style>
 .home{
+    background-image: url('../assets/background3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #e6e6e6;
     position: relative;
     height: 100%;
