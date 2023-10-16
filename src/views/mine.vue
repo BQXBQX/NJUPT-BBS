@@ -51,12 +51,16 @@ let navMineMessage = ref({
     justify-content: center;
 }
 .navUserInformation{
-    background-color:white ;
+    background-color: rgba(255, 255, 255, 0.9); /* 使用rgba()函数设置白色背景和透明度 */
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
 }
 .mineContainer{
+    background-image: url('../assets/background3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #e6e6e6;
     flex-direction: column;
     position: absolute;
