@@ -42,6 +42,7 @@
     align-content: center;
 }
 .postPartition{
+    gap: 8px;
     padding: 2px 15px;
     border-radius: 15px;
     margin: 10px;
