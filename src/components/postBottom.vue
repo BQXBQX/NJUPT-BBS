@@ -1,10 +1,11 @@
 <template>
   <div class="postBottomContainer">
       <div class="postBottomLeft">
-          <div class="iconContainer iconInput">
-              <svg t="1697424542600" style="height: 20px;width: 20px; padding-left: 10px;" class="icon" viewBox="0 0 1146 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="26202" width="200" height="200"><path d="M0 956.866005h1146.877922v63.856995H0v-63.856995z m0-44.089997l300.529979-85.323995L85.866994 614.104028 0 912.776008zM802.673945 328.370048L588.00996 115.020062 115.743992 584.37703l214.660985 213.329985L802.673945 328.370048z m99.768993-179.214988L768.272947 15.819069c-22.229998-22.096998-59.468996-20.893999-83.180994 2.665l-64.409995 63.991995 214.664985 213.349986 64.405995-64.011996c23.711998-23.559998 24.914998-60.559996 2.69-82.659994z" p-id="26203"></path></svg>
-          </div>
-          <input type="text" class="commentInput" placeholder="说点什么">
+          <InputComment></InputComment>
+<!--          <div class="iconContainer iconInput">-->
+<!--              <svg t="1697424542600" style="height: 20px;width: 20px; padding-left: 10px;" class="icon" viewBox="0 0 1146 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="26202" width="200" height="200"><path d="M0 956.866005h1146.877922v63.856995H0v-63.856995z m0-44.089997l300.529979-85.323995L85.866994 614.104028 0 912.776008zM802.673945 328.370048L588.00996 115.020062 115.743992 584.37703l214.660985 213.329985L802.673945 328.370048z m99.768993-179.214988L768.272947 15.819069c-22.229998-22.096998-59.468996-20.893999-83.180994 2.665l-64.409995 63.991995 214.664985 213.349986 64.405995-64.011996c23.711998-23.559998 24.914998-60.559996 2.69-82.659994z" p-id="26203"></path></svg>-->
+<!--          </div>-->
+<!--          <input type="text" class="commentInput" placeholder="说点什么">-->
       </div>
       <div class="postBottomRight">
           <div class="postBottomItem">
@@ -30,6 +31,7 @@
   </div>
 </template>
 <script setup>
+import InputComment from "./common/inputComment.vue";
 </script>
 <style>
 .postBottomContainer{
