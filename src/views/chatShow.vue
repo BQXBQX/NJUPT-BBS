@@ -42,6 +42,7 @@ function  sendMessage() {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin: 5vw;
 }
 .chatShowContainer {
     background-color: #e6e6e6;
@@ -58,7 +59,7 @@ function  sendMessage() {
     padding: 10px;
     display: flex;
     background-color: #dcf8c6;
-    height: 60px;
+    height: fit-content;
     align-content: center;
     width: fit-content;
     justify-content: flex-end;
@@ -73,7 +74,7 @@ function  sendMessage() {
     display: flex;
     width: fit-content;
     background-color: #faad9c;
-    height: 60px;
+    height: fit-content;
     align-content: center;
     flex-wrap: wrap;
 }

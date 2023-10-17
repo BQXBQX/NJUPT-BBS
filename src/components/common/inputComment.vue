@@ -1,13 +1,13 @@
 <template>
     <div class="inputContainer">
-        <div class="oldContainer" v-if="isNewInputVisible === false">
+        <div class="oldContainer">
             <div style="height: 50px;width: 25px;background-color: #e6e6e6;border-radius:25px 0 0 25px"></div>
-            <input type="text" style="background-color: #e6e6e6;height: 50px;width: 80%;box-sizing: border-box;" v-on:click="showNewInput"  placeholder="点击输入框">
+            <input type="text" style="background-color: #e6e6e6;height: 50px;width: 80%;box-sizing: border-box;" v-on:click="showNewInput"  placeholder="说点什么吧...">
             <div style="height: 50px;width: 25px;background-color: #e6e6e6;border-radius:0 25px 25px 0"></div>
         </div>
     </div>
     <transition name="slide-up">
-        <div class="newInputContainer" v-if="isNewInputVisible" >
+        <div class="newInputContainer" v-if="isNewInputVisible" v-show="isVisible" >
             <label v-if="isOverlayVisible" for="overlay">
                 <svg t="1697501732750" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7516" style="height: 32px;width: 32px"><path d="M512.146286 619.52L245.296762 352.792381 193.584762 404.48l318.585905 318.415238 318.268952-318.415238-51.736381-51.687619z" p-id="7517" fill="#8a8a8a"></path></svg>
             </label>
@@ -27,12 +27,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import {ref, watch} from 'vue';
 
 
 const isOverlayVisible = ref(false);
 const isNewInputVisible = ref(false);
 const newInput = ref(null);
+let isVisible = ref(false)
 
 function showNewInput() {
     isOverlayVisible.value = true;
@@ -42,10 +43,94 @@ function showNewInput() {
     }, 0);
 }
 
+// watch(isNewInputVisible, (newValue, oldValue) => {
+//     setTimeout(() => {
+//         isVisible.value = true;
+//     }, 0);
+// });
 function hideNewInput() {
     isOverlayVisible.value = false;
     isNewInputVisible.value = false;
 }
 </script>
 
+<style>
+.pictureLabel{
+    background-color: #e6e6e6;
+}
+.newInput{
+    display: flex;
+    justify-content: center;
+}
+.oldContainer{
+    display: flex;
+    margin: 0;
+    gap: 0px;
+    flex-direction: row;
+}
+label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.inputContainer {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    height: 50px;
+    border-radius: 0px;
+    border: 0px solid;
+}
+#overlay {
+    display: none;
+}
+.newInputContainer{
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0 5vw;
+    height: 80px;
+    box-shadow: 0 0 1000px gray;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    z-index: 100;
+    left: 0;
+}
+#new-input-container {
+    width: 60%;
+}
+.slide-up-leave-active {
+    transition: all 0.3s;
+}
+.slide-up-leave-to {
+    transform: translateY(100%);
+    opacity: 0;
+}
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.slide-up-enter-to {
+    animation: slide-up 0.3s forwards;
+}
+</style>
