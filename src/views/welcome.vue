@@ -7,10 +7,21 @@
             <br>
             <span class="welcomeContent">NJUPT</span>
             <span class="welcomeContent">BBS</span>
+            <div class="comeBottomContainer">
+                <button class="comeBottom" @click="toLogin"><span>come in !</span></button>
+            </div>
         </div>
     </div>
 </template>
 <script setup>
+//存在问题，当我引入 router 出现问题，无法正确的找到welcome,
+//index.js:28  Uncaught ReferenceError: Cannot access 'Welcome' before initialization
+
+// import router from "../router/index.js";
+
+function toLogin(){
+    router.push('login')
+}
 </script>
 <style>
 .container{
@@ -24,6 +35,17 @@
 .njupticon{
     height: 200px;
     width: 200px;
+}
+.comeBottomContainer{
+    margin-top: 15vw;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.comeBottom{
+    height: 80px;
 }
 .textContainer{
     margin-top: 40px;

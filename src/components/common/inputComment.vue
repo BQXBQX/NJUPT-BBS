@@ -35,19 +35,14 @@ const isNewInputVisible = ref(false);
 const newInput = ref(null);
 let isVisible = ref(false)
 
-function showNewInput() {
+async function showNewInput() {
     isOverlayVisible.value = true;
-    isNewInputVisible.value = true;
     setTimeout(() => {
         newInput.value.focus();
-    }, 0);
+    }, 0)
+    isVisible.value = true;
+    isNewInputVisible.value = true;
 }
-
-// watch(isNewInputVisible, (newValue, oldValue) => {
-//     setTimeout(() => {
-//         isVisible.value = true;
-//     }, 0);
-// });
 function hideNewInput() {
     isOverlayVisible.value = false;
     isNewInputVisible.value = false;

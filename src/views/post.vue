@@ -14,11 +14,8 @@
               </div>
               <InputComment></InputComment>
           </div>
-          <div class="oneBarComment" style="margin-bottom:1px ">
-              <postComment></postComment>
-              <post-comment class="nestedComment"></post-comment>
-          </div>
-          <post-comment></post-comment>
+          <postComment></postComment>
+          <postComment></postComment>
       </div>
       <PostBottom></PostBottom>
   </div>
@@ -62,8 +59,5 @@ const postContent = ref({
 .postCommentNav{
     display: flex;
     padding: 0 20px;
-}
-.nestedComment{
-    padding-left: 35px;
 }
 </style>
