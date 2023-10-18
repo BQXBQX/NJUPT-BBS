@@ -8,9 +8,7 @@
                   </div>
                   <span class="text" style="    font-weight: 400;font-size: 25px;">BQXBQX</span>
               </div>
-              <div class="right">
-                  <div class="concernPostButton">关注 TA</div>
-              </div>
+              <focus-button></focus-button>
           </div>
           <div class="postPictureContainer">
               <img src="https://ts1.cn.mm.bing.net/th/id/R-C.bb2b49d10fbdeef099bcfc7a9def7f9f?rik=qg41XR8J%2flja3w&riu=http%3a%2f%2fwww.petsworld.in%2fblog%2fwp-content%2fuploads%2f2014%2f10%2fBasset-Hound1.jpg&ehk=9EqdJnDRnuOuGazad86md%2bbjQwukrim1nA3zNg9CwdU%3d&risl=&pid=ImgRaw&r=0" alt="postPicture" class="postPicture">
@@ -32,6 +30,7 @@
 </template>
 <script setup>
 
+import FocusButton from "./common/focusButton/focusButton.vue";
 </script>
 <style>
 .postContentContainer{

@@ -1,0 +1,28 @@
+.concernButtonContainer{
+    width: 18%;
+    box-sizing: border-box;
+}
+.concernButton{
+    height:40px;
+    border: 2px solid gray;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color: gray;
+    border-radius: 15px;
+}
+.concernNotButton{
+    height:40px;
+    border: 2px solid #08ae13;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color: #08ae13;
+    border-radius: 15px;
+}

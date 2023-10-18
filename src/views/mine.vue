@@ -51,7 +51,8 @@ let navMineMessage = ref({
     justify-content: center;
 }
 .navUserInformation{
-    background-color: rgba(255, 255, 255, 0.9); /* 使用rgba()函数设置白色背景和透明度 */
+    background: linear-gradient(#5ee7df, #b490ca);
+    /*background-color: rgba(255, 255, 255, 0.9); !* 使用rgba()函数设置白色背景和透明度 *!*/
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -66,38 +67,10 @@ let navMineMessage = ref({
     position: absolute;
     display: flex;
     top:0px;
-    bottom: 84px;
+    bottom: 70px;
     width: 100%;
-}
-.mineAvatar{
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
-}
-.mineInformation{
-    display: flex;
-}
-.mineNameText{
-    font-size: 25px;
-    color: black;
 }
 .text{
     color: black;
-    font-family: inherit;
-}
-.mineIDText{
-    font-size: 15px;
-    color: gray;
-}
-.followInfo{
-    font-size: 20px;
-}
-.followNum{
-    font-size: 20px;
-    color: gray;
-}
-.followingContent{
-    display: flex;
-    gap: 5%;
 }
 </style>

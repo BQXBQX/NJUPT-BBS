@@ -1,5 +1,10 @@
 <template>
   <div class="chatContainer">
+      <div class="chatTop">
+          <span style="font-size: 30px">
+              Chat
+          </span>
+      </div>
       <div class="chatNav">
           <div class="chatFollowers">
               <div class="iconFollowersChatContainer">
@@ -14,12 +19,42 @@
               <span style="font-size: 30px;">following</span>
           </div>
       </div>
+      <div style="margin-top: 10vw;
+    display: flex;
+    gap: 1px;
+    flex-direction: column;" @click="toChatShow">
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+          <chat-user-bar></chat-user-bar>
+      </div>
   </div>
 </template>
 <script setup>
 
+import ChatUserBar from "../components/common/chatUserBar/chatUserBar.vue";
+import router from "../router/index.js";
+
+function toChatShow(){
+    router.push('chatshow')
+}
 </script>
 <style>
+.chatTop{
+    color: black;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
 .chatNav{
     padding-top: 15px;
     display: flex;
