@@ -1,6 +1,6 @@
 <template>
     <div class="moreIconContainer" @click="showTrueChange">
-        <svg class="moreIcon" t="1697624284622" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9847" width="200" height="200"><path d="M384 320l512 0c17.696 0 32-14.336 32-32s-14.304-32-32-32L384 256c-17.664 0-32 14.336-32 32S366.336 320 384 320z" fill="#2c2c2c" p-id="9848"></path><path d="M896 480 384 480c-17.664 0-32 14.336-32 32s14.336 32 32 32l512 0c17.696 0 32-14.336 32-32S913.696 480 896 480z" fill="#2c2c2c" p-id="9849"></path><path d="M896 704 384 704c-17.664 0-32 14.304-32 32s14.336 32 32 32l512 0c17.696 0 32-14.304 32-32S913.696 704 896 704z" fill="#2c2c2c" p-id="9850"></path><path d="M192 288m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#2c2c2c" p-id="9851"></path><path d="M192 512m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#2c2c2c" p-id="9852"></path><path d="M192 736m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#2c2c2c" p-id="9853"></path></svg>
+        <svg t="1697628030826" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8639" width="200" height="200"><path d="M384 320l512 0c17.696 0 32-14.336 32-32s-14.304-32-32-32L384 256c-17.664 0-32 14.336-32 32S366.336 320 384 320z" fill="#ffffff" p-id="8640"></path><path d="M896 480 384 480c-17.664 0-32 14.336-32 32s14.336 32 32 32l512 0c17.696 0 32-14.336 32-32S913.696 480 896 480z" fill="#ffffff" p-id="8641"></path><path d="M896 704 384 704c-17.664 0-32 14.304-32 32s14.336 32 32 32l512 0c17.696 0 32-14.304 32-32S913.696 704 896 704z" fill="#ffffff" p-id="8642"></path><path d="M192 288m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#ffffff" p-id="8643"></path><path d="M192 512m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#ffffff" p-id="8644"></path><path d="M192 736m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#ffffff" p-id="8645"></path></svg>
     </div>
     <transition name="fade">
         <div v-if="isShow" class="moreMessage">
@@ -60,79 +60,5 @@ function showFalseChane(){
 }
 </script>
 <style>
-.fade-enter-active {
-    transition: all 0.3s ease-out;
-}
-
-.fade-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    transform: translateX(-20px);
-    opacity: 0;
-}
-
-.bottomMessageMore{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.moreMessage{
-    background-color: white;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 70vw;
-    box-shadow: 0 0 10000px black;
-}
-.bottomMessageMoreBarContainer{
-    background-color: #e6e6e6;
-    height: 45px;
-    width: 45px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.moreIcon{
-    height: 32px;
-    width: 32px;
-}
-.bottomMessageMoreBar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-    gap: 5px;
-}
-.moreIconContainer{
-    height: 32px;
-    width: 32px;
-}
-.moreMessageBar{
-    color: black;
-    height: 70px;
-    display: flex;
-    gap: 20px;
-    padding-left: 20px;
-}
-.moreBackIcon{
-    height: 50px;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-top: 10px;
-}
-.moreText{
-    font-size: 20px;
-}
-.bottomMessageMore{
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+@import "../moreIcon/moreIcon.css";
 </style>
