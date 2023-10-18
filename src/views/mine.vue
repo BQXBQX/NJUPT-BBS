@@ -67,7 +67,7 @@ let navMineMessage = ref({
     position: absolute;
     display: flex;
     top:0px;
-    bottom: 84px;
+    bottom: 70px;
     width: 100%;
 }
 .text{
