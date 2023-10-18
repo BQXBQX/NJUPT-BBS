@@ -1,5 +1,16 @@
 <template>
     <div class="chatShowContainer">
+        <div class="chatUserMessage">
+            <div class="backIcon">
+                <svg t="1697599264362" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21408" width="200" height="200"><path d="M659.748571 245.272381l-51.687619-51.687619-318.439619 318.585905 318.415238 318.268952 51.712-51.736381-266.703238-266.556952z" p-id="21409" fill="#8a8a8a"></path></svg>
+            </div>
+            <div style="display: flex;align-items: center;gap: 20px">
+                <div class="chatUserAvatar">
+                    <img src="../assets/avatar.jpeg" alt="avatar" width="40" height="40" style="border-radius: 20px">
+                </div>
+                <span STYLE="font-family: inherit;font-size: 25px;color: black">BQXBQX</span>
+            </div>
+        </div>
         <div class="messageShow">
             <div class="messageContainer" v-for="message in messages" :class="message.sender === 'user' ? 'user-message' : 'assistant-message'">
                 <span class="messageContent" style="font-family: inherit;font-size: 30px">{{ message.content }}</span>
@@ -38,11 +49,27 @@ function  sendMessage() {
 </script>
 
 <style>
+.chatUserMessage{
+    display: flex;
+    height: 80px;
+    background-color: white;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 5vw;
+    box-sizing: border-box;
+}
 .messageShow{
+    left: 0;
+    right: 0;
+    top: 80px;
+    position: absolute;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 5vw;
+    padding: 5vw;
+    bottom: 60px;
 }
 .chatShowContainer {
     background-color: #e6e6e6;
