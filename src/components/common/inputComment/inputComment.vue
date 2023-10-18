@@ -29,7 +29,6 @@
 <script setup>
 import {ref, watch} from 'vue';
 
-
 const isOverlayVisible = ref(false);
 const isNewInputVisible = ref(false);
 const newInput = ref(null);
@@ -50,82 +49,5 @@ function hideNewInput() {
 </script>
 
 <style>
-.pictureLabel{
-    background-color: #e6e6e6;
-}
-.newInput{
-    display: flex;
-    justify-content: center;
-}
-.oldContainer{
-    display: flex;
-    margin: 0;
-    gap: 0px;
-    flex-direction: row;
-}
-label{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.inputContainer {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-}
-input{
-    height: 50px;
-    border-radius: 0px;
-    border: 0px solid;
-}
-#overlay {
-    display: none;
-}
-.newInputContainer{
-    background-color: white;
-    box-sizing: border-box;
-    padding: 0 5vw;
-    height: 80px;
-    box-shadow: 0 0 1000px gray;
-    width: 100%;
-    position: fixed;
-    bottom: 0px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    z-index: 100;
-    left: 0;
-}
-#new-input-container {
-    width: 60%;
-}
-.slide-up-leave-active {
-    transition: all 0.3s;
-}
-.slide-up-leave-to {
-    transform: translateY(100%);
-    opacity: 0;
-}
-@keyframes slide-up {
-    from {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.slide-up-enter-to {
-    animation: slide-up 0.3s forwards;
-}
+@import "../inputComment/inputComment.css";
 </style>

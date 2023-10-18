@@ -31,7 +31,7 @@
   </div>
 </template>
 <script setup>
-import InputComment from "./common/inputComment.vue";
+import InputComment from "./common/inputComment/inputComment.vue";
 </script>
 <style>
 .postBottomContainer{
