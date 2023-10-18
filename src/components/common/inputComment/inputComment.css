@@ -66,8 +66,6 @@ input{
     transform: translateY(100%);
     opacity: 0;
 }
-
-
 .slide-up-enter-from
 {
     transform: translateY(100%);
