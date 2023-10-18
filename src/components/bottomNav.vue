@@ -40,11 +40,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import {onMounted, ref} from 'vue';
 import router from "../router/index.js";
+import {useRoute} from "vue-router";
 
 // 默认选中首页
-const activeTab = ref('home');
+let urlRoute = useRoute().path.replace('/', '');
+let activeTab = ref(urlRoute);
+
+onMounted(()=>{
+    console.log(urlRoute)
+    router.push(activeTab.value)
+})
 
 // 点击导航项时切换activeTab的值
 const handleTabClick = (tab) => {
