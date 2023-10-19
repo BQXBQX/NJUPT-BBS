@@ -15,6 +15,7 @@ import MineMessage from "../views/mineMessage.vue";
 import Post from "../views/post.vue";
 import Test from "../views/test.vue";
 import ChatShow from "../views/chatShow.vue";
+import PartitionContent from "../views/partitionContent/partitionContent.vue";
 
 const routes = [
 // 路由的默认路径
@@ -26,6 +27,11 @@ const routes = [
     {
         path: '/welcome',
         component: Welcome
+    },
+    {
+        path: '/partitioncontent/:message?',
+        component: PartitionContent,
+        name: PartitionContent
     },
     {
         path: '/chatShow',
