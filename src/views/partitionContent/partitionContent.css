@@ -1,0 +1,9 @@
+.partitionContentContainer{
+    background-color: #e6e6e6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: 60px;
+    overflow-y: scroll;
+
+}

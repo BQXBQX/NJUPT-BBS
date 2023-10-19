@@ -1,6 +1,8 @@
 <template>
   <div class="partition">
-      <div style="position: absolute;
+      <div style="position: fixed;
+      z-index: 5;
+      box-shadow: 0 0 10px black;
     height: 60px;
     width: 100%;
     display: flex;
