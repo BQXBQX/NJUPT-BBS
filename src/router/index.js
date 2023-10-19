@@ -15,6 +15,11 @@ import MineMessage from "../views/mineMessage.vue";
 import Post from "../views/post.vue";
 import Test from "../views/test.vue";
 import ChatShow from "../views/chatShow.vue";
+import PartitionContent from "../views/partitionContent/partitionContent.vue";
+import UploadView from "../views/uploadView/uploadView.vue";
+import NowView from "../components/uploadViewComponents/nowView/nowView.vue";
+import PhotoView from "../components/uploadViewComponents/photoView/photoView.vue";
+import TakePhotoView from "../components/uploadViewComponents/takePhotoView/takePhotoView.vue";
 
 const routes = [
 // 路由的默认路径
@@ -26,6 +31,29 @@ const routes = [
     {
         path: '/welcome',
         component: Welcome
+    },
+    {
+        path: '/upload',
+        component: UploadView,
+        children: [
+            {
+                path: '/takephoto',
+                component: TakePhotoView
+            },
+            {
+                path: '/photo',
+                component: PhotoView
+            },
+            {
+                path: '/now',
+                component: NowView
+            }
+        ]
+    },
+    {
+        path: '/partitioncontent/:message?',
+        component: PartitionContent,
+        name: PartitionContent
     },
     {
         path: '/chatShow',

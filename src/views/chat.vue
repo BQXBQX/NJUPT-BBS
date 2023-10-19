@@ -19,10 +19,12 @@
               <span style="font-size: 30px;">following</span>
           </div>
       </div>
-      <div style="margin-top: 10vw;
-    display: flex;
-    gap: 1px;
-    flex-direction: column;" @click="toChatShow">
+      <div style="display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 275px;
+    right: 0px;
+    left: 0px;" @click="toChatShow">
           <chat-user-bar></chat-user-bar>
           <chat-user-bar></chat-user-bar>
           <chat-user-bar></chat-user-bar>
@@ -48,6 +50,9 @@ function toChatShow(){
 </script>
 <style>
 .chatTop{
+    width: 100%;
+    position: fixed;
+    z-index: 5;
     color: black;
     height: 60px;
     display: flex;
@@ -56,6 +61,17 @@ function toChatShow(){
     background-color: white;
 }
 .chatNav{
+    box-shadow: 0 1000000px 100000px #e6e6e6;
+    /*background-color: #e6e6e6;*/
+    background-image: url('../assets/background3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    top: 60px;
+    position: fixed;
+    z-index: 5;
     padding-top: 15px;
     display: flex;
     flex-direction: row;
@@ -64,7 +80,6 @@ function toChatShow(){
     justify-content: space-evenly;
 }
 .chatContainer{
-    background-color: #e6e6e6;
     width: 100%;
     box-sizing: border-box;
     position: absolute;
@@ -93,9 +108,6 @@ function toChatShow(){
     align-content: center;
     justify-content: center;
     box-shadow: 0 0 10px #1afa29;
-}
-.chatNav{
-    display: flex;
 }
 .chatFollowers{
     gap: 10px;
