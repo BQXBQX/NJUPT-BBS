@@ -3,7 +3,10 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    top: 60px;
+    top: 0;
     overflow-y: scroll;
-
+}
+.partitionContentMessage{
+    top: 60px;
+    position: absolute;
 }

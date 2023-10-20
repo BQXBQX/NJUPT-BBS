@@ -1,6 +1,6 @@
 <template>
     <div class="nav-bottom-container">
-        <div class="nav-bottom-item" :class="{ active: activeTab === 'home' }" @click="handleTabClick('home')">
+        <div  class="nav-bottom-item" :class="{ active: activeTab === 'home' }" @click="handleTabClick('home')">
             <div v-if="activeTab === 'home'">
                 <svg t="1697248804889" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7919" id="mx_n_1697248804891" width="200" height="200"><path d="M549.61981 133.022476l319.683047 203.605334A70.851048 70.851048 0 0 1 902.095238 396.361143v434.883047A70.89981 70.89981 0 0 1 831.146667 902.095238l-248.222477-0.024381V617.910857h-153.673142v284.16L192.828952 902.095238A70.89981 70.89981 0 0 1 121.904762 831.24419V390.241524c0-24.527238 12.678095-47.299048 33.54819-60.220953l318.659048-197.485714a70.972952 70.972952 0 0 1 75.50781 0.487619z" p-id="7920" fill="#2D328E"></path></svg>
             </div>
@@ -9,7 +9,7 @@
             </div>
             <span class="nav-bottom-text">首页</span>
         </div>
-        <div class="nav-bottom-item" :class="{ active: activeTab === 'partition' }" @click="handleTabClick('partition')">
+        <div  class="nav-bottom-item" :class="{ active: activeTab === 'partition' }" @click="handleTabClick('partition')">
             <div v-if="activeTab === 'partition'">
                 <svg t="1697248997168" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13969" width="200" height="200"><path d="M414.47619 121.904762a73.142857 73.142857 0 0 1 73.142858 73.142857v292.571429H195.047619a73.142857 73.142857 0 0 1-73.142857-73.142858V195.047619a73.142857 73.142857 0 0 1 73.142857-73.142857h219.428571z m73.142858 414.47619v292.571429a73.142857 73.142857 0 0 1-73.142858 73.142857H195.047619a73.142857 73.142857 0 0 1-73.142857-73.142857v-219.428571a73.142857 73.142857 0 0 1 73.142857-73.142858h292.571429z m231.619047-414.47619a182.857143 182.857143 0 1 1 0 365.714286 182.857143 182.857143 0 0 1 0-365.714286zM828.952381 536.380952a73.142857 73.142857 0 0 1 73.142857 73.142858v219.428571a73.142857 73.142857 0 0 1-73.142857 73.142857h-219.428571a73.142857 73.142857 0 0 1-73.142858-73.142857V536.380952h292.571429z" p-id="13970" fill="#2D328E"></path></svg>
             </div>
@@ -18,7 +18,7 @@
             </div>
             <span class="nav-bottom-text">分区</span>
         </div>
-        <div class="nav-bottom-item" :class="{ active: activeTab === 'chat' }" @click="handleTabClick('chat')">
+        <div  class="nav-bottom-item" :class="{ active: activeTab === 'chat' }" @click="handleTabClick('chat')">
             <div v-if="activeTab === 'chat'">
                 <svg t="1697249052446" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14283" width="200" height="200"><path d="M632.246857 121.904762c130.56 0 236.422095 105.837714 236.422095 236.422095 0 82.895238-42.666667 155.794286-107.203047 198.022095l192.853333 225.01181A73.142857 73.142857 0 0 1 898.779429 902.095238l-116.443429 0.024381c12.824381-22.186667 16.335238-48.566857 9.99619-73.142857L898.779429 828.952381 651.702857 540.696381l69.705143-45.568a163.279238 163.279238 0 0 0-86.381714-300.056381 287.158857 287.158857 0 0 0-63.341715-65.340952A236.544 236.544 0 0 1 632.246857 121.904762z m-69.90019 471.722667l160.914285 187.733333A73.142857 73.142857 0 0 1 667.672381 902.095238H134.656a73.142857 73.142857 0 0 1-55.53981-120.734476l160.914286-187.733333a283.867429 283.867429 0 0 0 161.158095 49.883428c59.806476 0 115.321905-18.407619 161.158096-49.883428zM401.188571 121.904762c130.56 0 236.422095 105.837714 236.422096 236.422095 0 130.56-105.862095 236.422095-236.422096 236.422095-130.584381 0-236.422095-105.862095-236.422095-236.422095C164.766476 227.742476 270.60419 121.904762 401.188571 121.904762z" p-id="14284" fill="#2D328E"></path></svg>
             </div>
@@ -27,7 +27,7 @@
             </div>
             <span class="nav-bottom-text">聊天</span>
         </div>
-        <div class="nav-bottom-item" :class="{ active: activeTab === 'mine' }" @click="handleTabClick('mine')">
+        <div  class="nav-bottom-item" :class="{ active: activeTab === 'mine' }" @click="handleTabClick('mine')">
             <div v-if="activeTab === 'mine'">
                 <svg t="1697248551688" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7647" id="mx_n_1697248551691" width="200" height="200"><path d="M669.013333 596.21181l194.389334 226.791619A77.433905 77.433905 0 0 1 804.59581 950.857143H212.016762a77.433905 77.433905 0 0 1-58.782476-127.853714l194.413714-226.791619a308.345905 308.345905 0 0 0 160.670476 44.860952c58.831238 0 113.834667-16.384 160.670476-44.860952zM508.294095 73.142857c142.57981 0 258.145524 115.565714 258.145524 258.145524 0 142.57981-115.565714 258.145524-258.145524 258.145524-142.57981 0-258.145524-115.565714-258.145524-258.145524C250.148571 188.732952 365.714286 73.142857 508.318476 73.142857z" p-id="7648" fill="#2D328E"></path></svg>
             </div>
@@ -43,19 +43,20 @@
 import {onMounted, ref} from 'vue';
 import router from "../router/index.js";
 import {useRoute} from "vue-router";
+import { IonButton, IonContent, IonPage } from '@ionic/vue';
 
 // 默认选中首页
 let urlRoute = useRoute().path.replace('/', '');
 let activeTab = ref(urlRoute);
 
 onMounted(()=>{
-    console.log(urlRoute)
+    // console.log(urlRoute)
     router.push(activeTab.value)
 })
 
 // 点击导航项时切换activeTab的值
 const handleTabClick = (tab) => {
-    console.log(tab)
+    // console.log(tab)
     router.push(tab);
     activeTab.value = tab;
 };
@@ -82,6 +83,7 @@ const handleTabClick = (tab) => {
     font-size: 12px;
 }
 .nav-bottom-item {
+    height: 56px;
     color: gray;
     display: flex;
     flex-direction: column;
@@ -89,9 +91,15 @@ const handleTabClick = (tab) => {
     align-content: center;
     justify-content: center;
     align-items: center;
+    width: 56px;
+    border-radius: 20px;
 }
 .nav-bottom-item.active {
     /* 选中项的颜色 */
     color: #2D328E;
+}
+.nav-bottom-item:active{
+    background-color: #e6e6e6;
+    transition: 0.2s;
 }
 </style>

@@ -1,15 +1,14 @@
 <template>
   <div class="partition">
-      <div style="position: fixed;
-      z-index: 5;
-      box-shadow: 0 0 10px black;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
+      <div style="   width: 100%;
+    position: fixed;
+    z-index: 5;
     color: black;
-    align-items: center;">
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;">
           <span style="font-size: 30px;">
               Partition
           </span>
@@ -22,7 +21,6 @@
               <span class="text">{{item.message}}</span>
           </div>
       </div>
-
   </div>
 </template>
 <script setup>

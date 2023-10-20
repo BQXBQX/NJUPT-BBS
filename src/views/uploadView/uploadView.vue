@@ -10,6 +10,7 @@ import UploadViewBottomNav from "../../components/uploadViewComponents/uploadVie
 </script>
 <style>
 .uploadView{
+    position: absolute;
     width: 100%;
     height: 100%;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="partitionContentContainer">
-      <post-top-nav :partitionMessage = 'routerPath'></post-top-nav>
+      <post-top-nav :partitionMessage = 'routerPath' style="z-index: 5"></post-top-nav>
       <div class="partitionContentMessage">
           <post-item></post-item>
           <post-item></post-item>

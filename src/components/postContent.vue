@@ -2,7 +2,7 @@
   <div class="postContentContainer">
       <div class="postContentLeft">
           <div class="postUser">
-              <div class="left">
+              <div @click="router.push('usermessage')" class="left">
                   <div class="avatar">
                       <img src="../assets/avatar.jpeg" alt="avatar" width="50" height="50">
                   </div>
@@ -31,6 +31,7 @@
 <script setup>
 
 import FocusButton from "./common/focusButton/focusButton.vue";
+import router from "../router/index.js";
 </script>
 <style>
 .postContentContainer{

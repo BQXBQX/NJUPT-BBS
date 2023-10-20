@@ -20,6 +20,7 @@ import UploadView from "../views/uploadView/uploadView.vue";
 import NowView from "../components/uploadViewComponents/nowView/nowView.vue";
 import PhotoView from "../components/uploadViewComponents/photoView/photoView.vue";
 import TakePhotoView from "../components/uploadViewComponents/takePhotoView/takePhotoView.vue";
+import UserMessage from "../views/userMessage/userMessage.vue";
 
 const routes = [
 // 路由的默认路径
@@ -60,6 +61,10 @@ const routes = [
         component: ChatShow
     },
     {
+        path: '/usermessage',
+        component: UserMessage
+    },
+    {
         path: '/login',
         component: Login
     },
@@ -87,19 +92,23 @@ const routes = [
         children:[
             {
                 path: '/home',
-                component: Home
+                component: Home,
+                name: 'home',
             },
             {
                 path: '/partition',
-                component: Partition
+                component: Partition,
+                name: 'partition',
             },
             {
                 path: '/chat',
-                component: Chat
+                component: Chat,
+                name: 'chat',
             },
             {
                 path: '/mine',
-                component: Mine
+                component: Mine,
+                name: 'mine',
             },
         ]
     },

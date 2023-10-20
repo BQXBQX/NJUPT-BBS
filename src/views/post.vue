@@ -27,6 +27,7 @@ import PostBottom from "../components/postBottom.vue";
 import PostComment from "../components/postComment.vue";
 import {ref} from "vue";
 import InputComment from "../components/common/inputComment/inputComment.vue";
+import router from "../router/index.js";
 
 const postContent = ref({
 })

@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ionic/vue": "^7.5.1",
+    "@ionic/vue-router": "^7.5.1",
     "axios": "^1.5.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"

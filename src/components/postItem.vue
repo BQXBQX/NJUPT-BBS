@@ -1,7 +1,7 @@
 <template>
     <div class = postItemContainer>
         <div class="postItemTopNav">
-            <div class="userInformation">
+            <div @click="router.push('usermessage')" class="userInformation">
                 <div class="avatar">
                     <img src="../assets/avatar.jpeg" alt="avatar" width="50" height="50">
                 </div>
@@ -12,7 +12,7 @@
             </div>
             <focus-button></focus-button>
         </div>
-        <div  @click="toPost" class="postItemContent">
+        <div @click="toPost" class="postItemContent">
             <span class="textContent">日前，国家自然科学基金委员会公布了2023年国家自然科学基金集中接收申请项目评审结果，我校获批立项资助125项（其中，国家杰出青年科学基金项目1项、优秀青年科学基金项目4项、重大研究计划培育项目1项、面上项目40项、青年科学基金项目79项），获资助直接经费5618.5万元。获资助项目数较2022年同期增长22.55%，经费数较2022年同期增长20.75%，获资助项目数和经费数均再创历史新高！此外，国家级人才类项目数再创历史新高！</span>
         </div>
         <div class="postItemBottomNav">
@@ -55,7 +55,10 @@ import FocusButton from "./common/focusButton/focusButton.vue";
 import router from "../router/index.js";
 
 function toPost(){
-    router.push('post')
+    console.log('toPost')
+    router.push({
+        path:'/post'
+    })
 }
 
 let goodMessage = ref({
