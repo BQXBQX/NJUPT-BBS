@@ -1,18 +1,31 @@
 <template>
+    <swiper :modules="[EffectFade]" effect="fade">
+        <swiper-slide>
+            <div style="width: 100%;
+            height: 70px;
+            background-color: #1afa29;"></div>
+        </swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        ...
+    </swiper>
 </template>
-<script setup>
-import {ref} from "vue";
+<script>
+import { EffectFade } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
-let isShow = ref(false)
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
-function showTrueChange(){
-    isShow.value = true
-}
-
-function showFalseChane(){
-    isShow.value = false
-}
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+        return {
+            EffectFade,
+        };
+    },
+};
 </script>
-<style>
-
-</style>

@@ -18,7 +18,7 @@
               <div class="iconContainer">
                   <div  v-html="item.svgString"></div>
               </div>
-              <span class="text">{{item.message}}</span>
+              <span class="text" style="font-size: 10px">{{item.message}}</span>
           </div>
       </div>
   </div>
@@ -107,7 +107,7 @@ function toPartitionContent(message) {
 <style>
 .partitionContent{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     overflow-y: scroll;
     box-sizing: border-box;
     position: absolute;
@@ -140,8 +140,8 @@ function toPartitionContent(message) {
     border-radius: 30px;
     box-shadow:  0 0 10px gray;
     box-sizing: border-box;
-    height: 175px;
-    width: 175px;
+    height: 70px;
+    width: 70px;
     margin:10px;
     display: flex;
     flex-direction: column;
