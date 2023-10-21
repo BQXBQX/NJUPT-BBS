@@ -2,7 +2,7 @@
     <div class="moreIconContainer" @click="showTrueChange">
         <svg t="1697628030826" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8639" width="200" height="200"><path d="M384 320l512 0c17.696 0 32-14.336 32-32s-14.304-32-32-32L384 256c-17.664 0-32 14.336-32 32S366.336 320 384 320z" fill="#ffffff" p-id="8640"></path><path d="M896 480 384 480c-17.664 0-32 14.336-32 32s14.336 32 32 32l512 0c17.696 0 32-14.336 32-32S913.696 480 896 480z" fill="#ffffff" p-id="8641"></path><path d="M896 704 384 704c-17.664 0-32 14.304-32 32s14.336 32 32 32l512 0c17.696 0 32-14.304 32-32S913.696 704 896 704z" fill="#ffffff" p-id="8642"></path><path d="M192 288m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#ffffff" p-id="8643"></path><path d="M192 512m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#ffffff" p-id="8644"></path><path d="M192 736m-64 0a2 2 0 1 0 128 0 2 2 0 1 0-128 0Z" fill="#ffffff" p-id="8645"></path></svg>
     </div>
-    <transition name="fade">
+    <transition name="fadeMore">
         <div v-if="isShow" class="moreMessage">
             <div class="moreBackIcon" @click="showFalseChane">
                 <svg t="1697625954429" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7516" width="200" height="200"><path d="M659.748571 245.272381l-51.687619-51.687619-318.439619 318.585905 318.415238 318.268952 51.712-51.736381-266.703238-266.556952z" p-id="7517" fill="#2c2c2c"></path></svg>

@@ -26,6 +26,5 @@ function isShowFalse(){
 }
 </script>
 <style>
-
+@import "../blackList/blackList.css";
 </style>
-
