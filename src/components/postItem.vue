@@ -20,7 +20,7 @@
                 <svg t="1697268052525" class="iconNav" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7676" width="200" height="200"><path :d="goodMessage.pathD" p-id="7779" :fill="goodMessage.fill"></path></svg>
                 <p style="color: gray; font-size: 20px; height: 30px">{{goodMessage.number}}</p>
             </div>
-            <div class="talk" style="
+            <div @click="router.push({path:'/post'})" class="talk" style="
             display: flex;
             flex-wrap: wrap;
             align-content: center;">
@@ -43,7 +43,8 @@
             display: flex;
             flex-wrap: wrap;
             align-content: center;">
-                <svg t="1697268355656" class="iconNav" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="20535" width="200" height="200"><path d="M234.666667 566.857143a64 64 0 1 0 0-128 64 64 0 0 0 0 128z m277.455238 0a64 64 0 1 0 0-128 64 64 0 0 0 0 128z m277.455238 0a64 64 0 1 0 0-128 64 64 0 0 0 0 128z" p-id="20536" fill="#8a8a8a"></path></svg>
+                <black-list></black-list>
+<!--                <svg t="1697268355656" class="iconNav" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="20535" width="200" height="200"><path d="M234.666667 566.857143a64 64 0 1 0 0-128 64 64 0 0 0 0 128z m277.455238 0a64 64 0 1 0 0-128 64 64 0 0 0 0 128z m277.455238 0a64 64 0 1 0 0-128 64 64 0 0 0 0 128z" p-id="20536" fill="#8a8a8a"></path></svg>-->
             </div>
         </div>
     </div>
@@ -53,6 +54,8 @@
 import {ref} from "vue";
 import FocusButton from "./common/focusButton/focusButton.vue";
 import router from "../router/index.js";
+import BlackList from "./common/blackList/blackList.vue";
+import Test from "../views/test.vue";
 
 function toPost(){
     console.log('toPost')
@@ -147,6 +150,7 @@ p{
     align-content: center;
     justify-content: space-between;
     margin-top: 10px;
+    height: 50px;
 }
 .good{
     display: flex;
