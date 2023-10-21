@@ -21,6 +21,7 @@ import NowView from "../components/uploadViewComponents/nowView/nowView.vue";
 import PhotoView from "../components/uploadViewComponents/photoView/photoView.vue";
 import TakePhotoView from "../components/uploadViewComponents/takePhotoView/takePhotoView.vue";
 import UserMessage from "../views/userMessage/userMessage.vue";
+import SearchView from "../views/searchView/searchView.vue";
 
 const routes = [
 // 路由的默认路径
@@ -71,6 +72,10 @@ const routes = [
         component: Test
     },
     {
+        path: '/search',
+        component: SearchView
+    },
+    {
         path: '/show',
         //当进入到show页面时，自动更新到home路由上
         redirect:"/home",
@@ -103,7 +108,7 @@ const routes = [
 // 创建路由对象
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
 })
 
 export default router
