@@ -1,6 +1,6 @@
 <template>
   <div class="uploadView">
-      <div style="width:100% ;height: 100%">
+      <div style="width:100% ;height: 100%;top: 0;position: absolute">
           <swiper class="swiper" :modules="[EffectCube]" effect="Cube">
               <swiper-slide ref="takePhoto" v-bind="useSwiperSlide()"><take-photo-view></take-photo-view></swiper-slide>
               <swiper-slide ref="now" v-bind="useSwiperSlide"><now-view></now-view></swiper-slide>
