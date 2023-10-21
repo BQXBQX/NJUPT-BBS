@@ -36,20 +36,6 @@ const routes = [
     {
         path: '/upload',
         component: UploadView,
-        children: [
-            {
-                path: '/takephoto',
-                component: TakePhotoView
-            },
-            {
-                path: '/photo',
-                component: PhotoView
-            },
-            {
-                path: '/now',
-                component: NowView
-            }
-        ]
     },
     {
         path: '/partitioncontent/:message?',
