@@ -4,7 +4,7 @@
             <div class="backIcon" @click="toBack">
                 <svg t="1697599264362" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21408" width="200" height="200"><path d="M659.748571 245.272381l-51.687619-51.687619-318.439619 318.585905 318.415238 318.268952 51.712-51.736381-266.703238-266.556952z" p-id="21409" fill="#8a8a8a"></path></svg>
             </div>
-            <div style="display: flex;align-items: center;gap: 20px">
+            <div  @click="router.push('usermessage')" style="display: flex;align-items: center;gap: 20px">
                 <div class="chatUserAvatar">
                     <img src="../assets/avatar.jpeg" alt="avatar" width="40" height="40" style="border-radius: 20px">
                 </div>
@@ -33,9 +33,8 @@
 
 <script setup>
 
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import router from "../router/index.js";
-
 const messages = ref([
     { sender: 'assistant', content: '欢迎来到对话界面！' }
 ]);

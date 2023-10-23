@@ -8,7 +8,7 @@
             <span class="welcomeContent">NJUPT</span>
             <span class="welcomeContent">BBS</span>
             <div class="comeBottomContainer">
-                <button class="comeBottom" @click="toLogin"><span>come in !</span></button>
+                <button style="width: 40vw" class="comeBottom"><a href="http://localhost:5173/login" style="color: white;font-size: 30px ;font-family: 'Anton', sans-serif; ">come in!</a></button>
             </div>
         </div>
     </div>
@@ -19,9 +19,9 @@
 
 // import router from "../router/index.js";
 
-function toLogin(){
-    router.push('login')
-}
+// function toLogin(){
+//     router.push('login')
+// }
 </script>
 <style>
 .container{

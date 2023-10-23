@@ -17,7 +17,8 @@
         </div>
         <div class="postItemBottomNav">
             <div class="good" @click="good">
-                <svg t="1697268052525" class="iconNav" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7676" width="200" height="200"><path :d="goodMessage.pathD" p-id="7779" :fill="goodMessage.fill"></path></svg>
+                <good-button></good-button>
+<!--                <svg t="1697268052525" class="iconNav" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7676" width="200" height="200"><path :d="goodMessage.pathD" p-id="7779" :fill="goodMessage.fill"></path></svg>-->
                 <p style="color: gray; font-size: 20px; height: 30px">{{goodMessage.number}}</p>
             </div>
             <div @click="router.push({path:'/post'})" class="talk" style="
@@ -56,6 +57,7 @@ import FocusButton from "./common/focusButton/focusButton.vue";
 import router from "../router/index.js";
 import BlackList from "./common/blackList/blackList.vue";
 import Test from "../views/test.vue";
+import GoodButton from "./common/goodButton/goodButton.vue";
 
 function toPost(){
     console.log('toPost')

@@ -24,7 +24,7 @@
     position: absolute;
     top: 275px;
     right: 0px;
-    left: 0px;" @click="toChatShow">
+    left: 0px;">
           <chat-user-bar></chat-user-bar>
           <chat-user-bar></chat-user-bar>
           <chat-user-bar></chat-user-bar>
