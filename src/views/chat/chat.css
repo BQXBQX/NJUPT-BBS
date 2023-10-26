@@ -1,0 +1,90 @@
+.chatTop {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  color: black;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.chatNav {
+  box-shadow: 0 1000000px 100000px #e6e6e6;
+  /*background-color: #e6e6e6;*/
+  background-image: url("../../assets/background3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  top: 60px;
+  position: fixed;
+  z-index: 5;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.chatContainer {
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0px;
+  bottom: 80px;
+  overflow-y: scroll;
+}
+.iconFollowersChatContainer {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #2d328e;
+}
+.iconFollowingChatContainer {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  background-color: #1afa29;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #1afa29;
+}
+.chatFollowers {
+  gap: 10px;
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  /*box-shadow: 0 0 1000px cornflowerblue;*/
+  /*border: 2px solid cornflowerblue;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.chatFollowing {
+  gap: 10px;
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  /*box-shadow: 0 0 1000px #1afa29;*/
+  /*border: 2px solid #1afa29;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}

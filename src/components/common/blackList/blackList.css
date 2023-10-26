@@ -1,45 +1,43 @@
-.Blacklist{
-    height: 32px;
-    width: 32px;
+.Blacklist {
+  height: 32px;
+  width: 32px;
 }
-.BlacklistMessage{
-    background-color: white;
-    height: 80px;
-    gap: 8px;
-    width: 160px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+.BlacklistMessage {
+  background-color: white;
+  height: 80px;
+  gap: 8px;
+  width: 160px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
-
 
 .BlackListSlide-enter-active {
-    transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .BlackListSlide-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .BlackListSlide-leave-to,
-.BlackListSlide-enter-from
-{
-    transform: translateY(100%);
-    opacity: 0;
+.BlackListSlide-enter-from {
+  transform: translateY(100%);
+  opacity: 0;
 }
-.messageBar{
-    color: #2c2c2c;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+.messageBar {
+  color: #2c2c2c;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }

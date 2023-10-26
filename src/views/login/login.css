@@ -1,0 +1,70 @@
+span {
+  font-family: "Anton", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.container {
+  margin: 10%;
+  display: flex;
+  gap: 20px;
+}
+
+input {
+  color: #2d328e;
+  background-color: white;
+  width: 60%;
+  height: 64px;
+  margin: 0;
+  border: 2px solid #2d328e;
+  border-radius: 0 32px 32px 0;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+input:focus {
+  outline: none;
+}
+.inputText {
+  height: 50px;
+  width: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #2d328e;
+  color: white;
+  padding: 10px;
+}
+
+.submit {
+  font-family: "Anton", sans-serif;
+  font-size: 25px;
+}
+
+.submit:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.submit:focus {
+  outline: none;
+}
+.toRegister {
+  display: flex;
+  font-family: "Anton", sans-serif;
+  font-size: 20px;
+  border: 2px solid #2d328e;
+  border-radius: 10px;
+  height: 40px;
+  width: 30%;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -3,23 +3,20 @@ import {
     createWebHistory,
 } from 'vue-router'
 
-import Welcome from "../views/welcome.vue";
-import Login from "../views/login.vue";
-import Home from "../views/home.vue";
-import Register from "../views/register.vue";
-import Partition from "../views/partition.vue";
-import Chat from "../views/chat.vue";
-import Mine from "../views/mine.vue";
-import Show from "../views/show.vue";
-import MineMessage from "../views/mineMessage.vue";
-import Post from "../views/post.vue";
+import Welcome from "../views/welcome/welcome.vue";
+import Login from "../views/login/login.vue";
+import Home from "../views/home/home.vue";
+import Register from "../views/register/register.vue";
+import Partition from "../views/partition/partition.vue";
+import Chat from "../views/chat/chat.vue";
+import Mine from "../views/mine/mine.vue";
+import Show from "../views/show/show.vue";
+import MineMessage from "../views/mineMessage/mineMessage.vue";
+import Post from "../views/post/post.vue";
 import Test from "../views/test.vue";
-import ChatShow from "../views/chatShow.vue";
+import ChatShow from "../views/chatShow/chatShow.vue";
 import PartitionContent from "../views/partitionContent/partitionContent.vue";
 import UploadView from "../views/uploadView/uploadView.vue";
-import NowView from "../components/uploadViewComponents/nowView/nowView.vue";
-import PhotoView from "../components/uploadViewComponents/photoView/photoView.vue";
-import TakePhotoView from "../components/uploadViewComponents/takePhotoView/takePhotoView.vue";
 import UserMessage from "../views/userMessage/userMessage.vue";
 import SearchView from "../views/searchView/searchView.vue";
 

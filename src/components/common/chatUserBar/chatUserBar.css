@@ -1,0 +1,18 @@
+.chatUserBarContainer {
+  display: flex;
+  background-color: white;
+  padding: 2vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatUserBarLeft {
+  display: flex;
+  gap: 20px;
+}
+.chatUserBarSpan {
+  gap: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
