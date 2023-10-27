@@ -64,8 +64,8 @@ function toBack(){
     display: flex;
 }
 .icon{
-    height: 32px;
-    width: 32px;
+    height: 30px;
+    width: 30px;
 }
 
 </style>

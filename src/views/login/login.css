@@ -2,12 +2,15 @@ span {
   font-family: "Anton", sans-serif;
   font-weight: bold;
   font-size: 40px;
+  text-align: center;
 }
 
 .container {
   margin: 10%;
   display: flex;
   gap: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 input {
@@ -32,7 +35,7 @@ input:focus {
   outline: none;
 }
 .inputText {
-  height: 50px;
+  height: 70px;
   width: 100px;
   display: flex;
   align-content: center;
@@ -41,6 +44,7 @@ input:focus {
   background-color: #2d328e;
   color: white;
   padding: 10px;
+  box-sizing: border-box;
 }
 
 .submit {
@@ -67,4 +71,18 @@ input:focus {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+.loginSlide-enter-active,
+.loginSlide-leave-active {
+  transition: all 0.3s ease;
+}
+.loginSlide-enter-from,
+.loginSlide-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.loginSlide-enter-to,
+.loginSlide-leave-from {
+  transform: translateX(0);
+  opacity: 100;
 }

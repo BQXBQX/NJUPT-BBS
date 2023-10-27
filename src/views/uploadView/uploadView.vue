@@ -8,15 +8,15 @@
         @swiper="onSwiper"
         @slideChange="onSlideChange"
       >
-        <swiper-slide ref="now" v-bind="useSwiperSlide">
+        <swiper-slide v-bind="useSwiperSlide">
           <now-view></now-view>
           <PageMessage :pageNum="1"></PageMessage>
         </swiper-slide>
-        <swiper-slide ref="takePhoto" v-bind="useSwiperSlide()"
+        <swiper-slide v-bind="useSwiperSlide"
           ><take-photo-view></take-photo-view>
           <PageMessage :pageNum="2"></PageMessage>
         </swiper-slide>
-        <swiper-slide ref="photo" v-bind="useSwiperSlide"
+        <swiper-slide v-bind="useSwiperSlide"
           ><photo-view></photo-view> <PageMessage :pageNum="3"></PageMessage>
         </swiper-slide>
       </swiper>

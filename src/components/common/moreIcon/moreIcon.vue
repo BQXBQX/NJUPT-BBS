@@ -101,7 +101,7 @@
           </svg>
           <span class="moreText">在线发帖</span>
         </div>
-        <div class="moreMessageBar">
+        <div class="moreMessageBar" @click="router.push('history')">
           <svg
             t="1697624973482"
             class="icon"

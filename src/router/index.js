@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Welcome from "../views/welcome/welcome.vue";
 import Login from "../views/login/login.vue";
 import Home from "../views/home/home.vue";
 import Register from "../views/register/register.vue";
@@ -16,19 +15,16 @@ import PartitionContent from "../views/partitionContent/partitionContent.vue";
 import UploadView from "../views/uploadView/uploadView.vue";
 import UserMessage from "../views/userMessage/userMessage.vue";
 import SearchView from "../views/searchView/searchView.vue";
-import MyPost from '../views/myPost/myPost.vue'
+import MyPost from "../views/myPost/myPost.vue";
+import history from "../views/history/history.vue";
 
 const routes = [
   // 路由的默认路径
   {
     path: "/",
-    redirect: "/welcome",
+    redirect: "/login",
   },
   //创建路径
-  {
-    path: "/welcome",
-    component: Welcome,
-  },
   {
     path: "/upload",
     component: UploadView,
@@ -55,6 +51,10 @@ const routes = [
     component: Register,
   },
   {
+    path: "/history",
+    component: history,
+  },
+  {
     path: "/minemessage",
     component: MineMessage,
   },
@@ -71,8 +71,8 @@ const routes = [
     component: SearchView,
   },
   {
-    path:"/mypost",
-    component:MyPost
+    path: "/mypost",
+    component: MyPost,
   },
   {
     path: "/show",
@@ -109,5 +109,20 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+
+//浏览记录的保存
+// router.beforeEach((to) => {
+//   console.log(to.fullPath);
+//   let historyArray = localStorage.getItem("history");
+//   const historyElement = to.fullPath;
+//   console.log(historyArray);
+//   if (!historyArray) {
+//     historyArray = [];
+//   }
+//   historyArray.push(historyElement);
+//   console.log(historyArray);
+//   localStorage.setItem("history",historyArray)
+// });
 
 export default router;
