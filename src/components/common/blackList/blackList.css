@@ -3,6 +3,7 @@
   width: 32px;
 }
 .BlacklistMessage {
+  z-index: 2;
   background-color: white;
   height: 80px;
   gap: 8px;
