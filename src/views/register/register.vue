@@ -60,11 +60,13 @@
       <input type="text" v-model="verifiedCode" />
     </div>
     <button type="submit" class="submit" v-on:click="register">register</button>
+    <span class="backLogin" @click="router.go(-1)">I have a account</span>
   </div>
 </template>
 <script setup>
 import { ref } from "vue";
 import api from "../../service/api.js";
+import router from "../../router";
 
 let email = ref();
 let password = ref();
@@ -79,6 +81,6 @@ async function register() {
   console.log(response);
 }
 </script>
-<style>
+<style scoped>
 @import "./register.css";
 </style>

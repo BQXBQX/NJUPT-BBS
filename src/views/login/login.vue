@@ -55,7 +55,7 @@
           v-model="password"
         />
       </div>
-      <button type="submit" class="submit" v-on:click="login">login</button>
+      <button type="submit" class="submit" v-on:click="login" @click="router.push('show')">login</button>
       <div class="toRegister">
         <a href="http://localhost:5173/register">Register</a>
       </div>
@@ -67,10 +67,11 @@
 import api from "../../service/api.js";
 import { onMounted, ref } from "vue";
 import welcome from '../welcome/welcome.vue'
+import router from "../../router";
 
-let email = ref();
-let password = ref();
-let responseContent = ref({});
+// let email = ref();
+// let password = ref();
+// let responseContent = ref({});
 let isLoginActive = ref(false)
 
 onMounted(()=>{
@@ -79,41 +80,41 @@ onMounted(()=>{
   },3300)
 })
 
-async function login() {
-  try {
-    const response = await api
-      .get("/user/login", {
-        email: email.value,
-        password: password.value,
-      })
-      .then((result) => {
-        //通过response的then来返回请求获得的数据
-        console.log(result);
-        responseContent.value = result;
+// async function login() {
+//   try {
+//     const response = await api
+//       .get("/user/login", {
+//         email: email.value,
+//         password: password.value,
+//       })
+//       .then((result) => {
+//         //通过response的then来返回请求获得的数据
+//         console.log(result);
+//         responseContent.value = result;
 
-        //判断如果response的error信息存在，就alert错误信息，并且重置login页面
-        if (responseContent.value.error_message) {
-          //提示账户错误的原因❌
-          alert(responseContent.value.error_message);
-          email.value = null;
-          password.value = null;
-        } else {
-          //设置通行token
-          localStorage.setItem(
-            "accessToken",
-            responseContent.value.data.accessToken
-          );
-          localStorage.setItem(
-            "refreshToken",
-            responseContent.value.data.refreshToken
-          );
-        }
-      });
-  } catch (error) {
-    console.log(error);
-  }
-}
+//         //判断如果response的error信息存在，就alert错误信息，并且重置login页面
+//         if (responseContent.value.error_message) {
+//           //提示账户错误的原因❌
+//           alert(responseContent.value.error_message);
+//           email.value = null;
+//           password.value = null;
+//         } else {
+//           //设置通行token
+//           localStorage.setItem(
+//             "accessToken",
+//             responseContent.value.data.accessToken
+//           );
+//           localStorage.setItem(
+//             "refreshToken",
+//             responseContent.value.data.refreshToken
+//           );
+//         }
+//       });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 </script>
-<style>
+<style scoped>
 @import "./login.css";
 </style>
