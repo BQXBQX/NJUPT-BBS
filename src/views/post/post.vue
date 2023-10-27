@@ -77,11 +77,7 @@ import PostTopNav from "../../components/post/postTopNav/postTopNav.vue";
 import PostContent from "../../components/post/postContent/postContent.vue";
 import PostBottom from "../../components/post/postBottom/postBottom.vue";
 import PostComment from "../../components/post/postComment/postComment.vue";
-import { ref } from "vue";
 import InputComment from "../../components/common/inputComment/inputComment.vue";
-import router from "../../router/index.js";
-
-const postContent = ref({});
 </script>
 <style>
 @import "./post.css";

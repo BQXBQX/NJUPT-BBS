@@ -8,6 +8,7 @@ span {
   margin: 10%;
   display: flex;
   gap: 20px;
+  flex-direction: column;
 }
 
 input {
@@ -67,4 +68,15 @@ input:focus {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+.loginSlide-enter-active, .loginSlide-leave-active {
+  transition: all 0.3s ease;
+}
+.loginSlide-enter-from, .loginSlide-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.loginSlide-enter-to, .loginSlide-leave-from {
+  transform: translateX(0);
+  opacity: 100;
 }

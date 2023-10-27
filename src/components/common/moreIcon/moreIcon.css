@@ -52,11 +52,14 @@
   width: 32px;
 }
 .moreMessageBar {
-  color: black;
-  height: 70px;
-  display: flex;
-  gap: 20px;
-  padding-left: 20px;
+color: black;
+    height: 70px;
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+    display: flex;
+    /* align-content: center; */
+    align-items: center;
 }
 .moreBackIcon {
   height: 50px;
