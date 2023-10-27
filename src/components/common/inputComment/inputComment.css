@@ -1,73 +1,72 @@
-.pictureLabel{
-    background-color: #e6e6e6;
+.pictureLabel {
+  background-color: #e6e6e6;
 }
-.newInput{
-    display: flex;
-    justify-content: center;
+.newInput {
+  display: flex;
+  justify-content: center;
 }
-.oldContainer{
-    display: flex;
-    margin: 0;
-    gap: 0px;
-    flex-direction: row;
+.oldContainer {
+  display: flex;
+  margin: 0;
+  gap: 0px;
+  flex-direction: row;
 }
-label{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .inputContainer {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
-input{
-    height: 50px;
-    border-radius: 0px;
-    border: 0px solid;
+input {
+  height: 50px;
+  border-radius: 0px;
+  border: 0px solid;
 }
 #overlay {
-    display: none;
+  display: none;
 }
-.newInputContainer{
-    background-color: white;
-    box-sizing: border-box;
-    padding: 0 5vw;
-    height: 80px;
-    box-shadow: 0 0 1000px gray;
-    width: 100%;
-    position: fixed;
-    bottom: 0px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    z-index: 100;
-    left: 0;
+.newInputContainer {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 5vw;
+  height: 80px;
+  box-shadow: 0 0 1000px gray;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  z-index: 100;
+  left: 0;
 }
 #new-input-container {
-    width: 60%;
+  width: 60%;
 }
 .slide-up-enter-active {
-    transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .slide-up-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-up-leave-to {
-    transform: translateY(100%);
-    opacity: 0;
+  transform: translateY(100%);
+  opacity: 0;
 }
-.slide-up-enter-from
-{
-    transform: translateY(100%);
-    opacity: 0;
+.slide-up-enter-from {
+  transform: translateY(100%);
+  opacity: 0;
 }

@@ -1,0 +1,81 @@
+.postItemContainer{
+    border-radius: 15px;
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.postItemTopNav{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.userInformation{
+    display: flex;
+    gap: 10px;
+}
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user{
+    height: 50px;
+}
+p{
+    margin: 0;
+    height: 25px;
+}
+.textContent{
+    all:unset;
+    text-align: left;
+}
+.userName{
+    font-weight: bold;
+    color: black;
+}
+.postTime{
+    color: gray;
+}
+.textContent{
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+}
+.postItemContent{
+    margin-top: 10px;
+}
+.postItemBottomNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    height: 50px;
+}
+.good{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.talk{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.iconNav{
+    height: 30px;
+    width: 30px;
+}

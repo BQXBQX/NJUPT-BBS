@@ -1,0 +1,29 @@
+.messageBarContainer {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: center;
+}
+.navUserInformation {
+  background: linear-gradient(#5ee7df, #b490ca);
+  /*background-color: rgba(255, 255, 255, 0.9); !* 使用rgba()函数设置白色背景和透明度 *!*/
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mineContainer {
+  background-image: url("../../assets/background3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #e6e6e6;
+  flex-direction: column;
+  position: absolute;
+  display: flex;
+  top: 0px;
+  bottom: 70px;
+  width: 100%;
+}
+.text {
+  color: black;
+}

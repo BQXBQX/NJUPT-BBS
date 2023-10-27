@@ -1,0 +1,82 @@
+.chatUserMessage {
+  display: flex;
+  height: 80px;
+  background-color: white;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 5vw;
+  box-sizing: border-box;
+}
+.messageShow {
+  left: 0;
+  right: 0;
+  top: 80px;
+  position: absolute;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5vw;
+  bottom: 60px;
+}
+.chatShowContainer {
+  background-color: #e6e6e6;
+  height: 100%;
+  width: 100%;
+}
+
+.user-message {
+  margin-right: 40px;
+  margin-left: auto;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  background-color: #dcf8c6;
+  height: fit-content;
+  align-content: center;
+  width: fit-content;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.assistant-message {
+  margin-left: 40px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  width: fit-content;
+  background-color: #faad9c;
+  height: fit-content;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.commitBottom {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  height: 60px;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.inputCommit {
+  display: flex;
+  flex-wrap: wrap;
+  /*align-content: center;*/
+  width: 60%;
+  padding-left: 5px;
+}
+.svgImage {
+  height: 40px;
+  width: 40px;
+}
+.messageContainer {
+}

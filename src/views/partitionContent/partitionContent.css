@@ -1,12 +1,12 @@
-.partitionContentContainer{
-    background-color: #e6e6e6;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    top: 0;
-    overflow-y: scroll;
+.partitionContentContainer {
+  background-color: #e6e6e6;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  top: 0;
+  overflow-y: scroll;
 }
-.partitionContentMessage{
-    top: 60px;
-    position: absolute;
+.partitionContentMessage {
+  top: 60px;
+  position: absolute;
 }

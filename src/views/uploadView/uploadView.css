@@ -1,0 +1,25 @@
+.uploadView {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.swiper {
+  height: 90%;
+}
+.uploadViewBottomNavContainer {
+  background-color: black;
+  display: flex;
+  position: absolute;
+  height: 10vh;
+  bottom: -1px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.uploadViewBottomNavItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -1,76 +1,76 @@
 .fadeMore-enter-active {
-    transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .fadeMore-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .fadeMore-enter-from,
 .fadeMore-leave-to {
-    transform: translateX(-20px);
-    opacity: 0;
+  transform: translateX(-20px);
+  opacity: 0;
 }
 
-.bottomMessageMore{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.bottomMessageMore {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.moreMessage{
-    z-index: 5;
-    background-color: white;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 70vw;
-    box-shadow: 0 0 10000px black;
+.moreMessage {
+  z-index: 5;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 70vw;
+  box-shadow: 0 0 10000px black;
 }
-.bottomMessageMoreBarContainer{
-    background-color: #e6e6e6;
-    height: 45px;
-    width: 45px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.bottomMessageMoreBarContainer {
+  background-color: #e6e6e6;
+  height: 45px;
+  width: 45px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.moreIcon{
-    height: 32px;
-    width: 32px;
+.moreIcon {
+  height: 32px;
+  width: 32px;
 }
-.bottomMessageMoreBar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-    gap: 5px;
+.bottomMessageMoreBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  gap: 5px;
 }
-.moreIconContainer{
-    height: 32px;
-    width: 32px;
+.moreIconContainer {
+  height: 32px;
+  width: 32px;
 }
-.moreMessageBar{
-    color: black;
-    height: 70px;
-    display: flex;
-    gap: 20px;
-    padding-left: 20px;
+.moreMessageBar {
+  color: black;
+  height: 70px;
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
 }
-.moreBackIcon{
-    height: 50px;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-top: 10px;
+.moreBackIcon {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 10px;
 }
-.moreText{
-    font-size: 20px;
+.moreText {
+  font-size: 20px;
 }
-.bottomMessageMore{
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.bottomMessageMore {
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
