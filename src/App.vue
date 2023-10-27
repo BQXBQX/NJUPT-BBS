@@ -1,6 +1,4 @@
 <script setup>
-import Welcome from "./views/welcome/welcome.vue";
-import Login from "./views/login/login.vue";
 
 </script>
 

@@ -28,9 +28,11 @@
     </svg>
   </div>
   <transition name="BlackListSlide">
-    <div class="BlacklistMessage" v-if="isShow === true">
-      <div class="messageBar">举报TA</div>
-      <div class="messageBar" @click="isShowFalse">取消</div>
+    <div v-if="isShow === true" style="   position: fixed; inset: 0;">
+      <div class="BlacklistMessage" v-if="isShow === true">
+        <div class="messageBar">举报TA</div>
+        <div class="messageBar" @click="isShowFalse">取消</div>
+      </div>
     </div>
   </transition>
 </template>

@@ -56,7 +56,6 @@ import {ref} from "vue";
 import FocusButton from "../focusButton/focusButton.vue";
 import router from "../../../router/index.js";
 import BlackList from "../blackList/blackList.vue";
-import Test from "../../../views/test.vue";
 import GoodButton from "../goodButton/goodButton.vue";
 
 function toPost(){

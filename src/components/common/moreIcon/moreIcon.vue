@@ -82,7 +82,7 @@
           </svg>
           <span class="moreText">发现同学</span>
         </div>
-        <div class="moreMessageBar" @click="router.push('now')">
+        <div class="moreMessageBar" @click="router.push('upload')">
           <svg
             t="1697624937652"
             class="icon"

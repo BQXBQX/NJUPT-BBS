@@ -2,7 +2,7 @@
   <div class="mineContainer">
     <NavMineInformation :message="navMineMessage"></NavMineInformation>
     <div class="messageBarContainer">
-      <MessageBar :message="messageBarContent[0]"></MessageBar>
+      <MessageBar @click = "router.push('mypost')" :message="messageBarContent[0]"></MessageBar>
       <MessageBar :message="messageBarContent[1]"></MessageBar>
       <MessageBar :message="messageBarContent[2]"></MessageBar>
     </div>
@@ -12,6 +12,7 @@
 import NavMineInformation from "../../components/showViewComponents/mineView/navMineInformation/navMineInformation.vue";
 import MessageBar from "../../components/common/messageBar/messageBar.vue";
 import { ref } from "vue";
+import router from "../../router";
 
 let messageBarContent = ref([
   {

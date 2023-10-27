@@ -22,6 +22,8 @@
 <script setup>
 import router from "../../../router/index.js";
 
+console.log(props.partitionMessage);
+
 const props = defineProps({
     partitionMessage:{
         type:String,

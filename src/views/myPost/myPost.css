@@ -1,0 +1,15 @@
+.myPostContainer {
+  position: absolute;
+  inset: 0;
+  background-color: aqua;
+}
+.topNav {
+  box-shadow: 0 0 10px gray;
+  height: 60px;
+}
+.myPostContent {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  overflow-y: scroll;
+}

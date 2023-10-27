@@ -112,7 +112,7 @@
         submit
       </button>
     </div>
-  </div>s
+  </div>
 </template>
 
 <script setup>
