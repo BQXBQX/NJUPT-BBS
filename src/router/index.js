@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+import welcome from "../views/welcome/welcome.vue"
 import Login from "../views/login/login.vue";
 import Home from "../views/home/home.vue";
 import Register from "../views/register/register.vue";
@@ -22,9 +23,13 @@ const routes = [
   // 路由的默认路径
   {
     path: "/",
-    redirect: "/login",
+    redirect: "/welcome",
   },
   //创建路径
+  {
+    path:"/welcome",
+    component: welcome
+  },
   {
     path: "/upload",
     component: UploadView,

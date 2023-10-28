@@ -49,12 +49,14 @@
 <script setup>
 import { onMounted } from "vue";
 import { ref } from "vue";
+import router from "../../router";
 
 let isWelcomeActive = ref(true);
 
 onMounted(() => {
   setTimeout(() => {
     isWelcomeActive.value = false;
+    router.push("login")
   }, 3000);
 });
 </script>
