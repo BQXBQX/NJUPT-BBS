@@ -202,7 +202,7 @@
       <div class="draftsContent">
         <div v-for="(draftItem, index) in postDraftsStore" :key="draftItem.id">
           <div class="draftItem" @click="openDraft(draftItem, index)">
-            <span style="font-size: 12px; font-weight: 200">
+            <span style="font-size: 12px; font-weight: 200;width: 70%;">
               {{ draftItem }}
             </span>
             <button

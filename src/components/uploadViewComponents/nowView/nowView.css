@@ -53,6 +53,8 @@
 .draftItem {
   display: flex;
   height: fit-content;
+  overflow: hidden;
+  word-wrap: break-word;
   width: 70%;
   margin: 3vh auto;
   text-align: center;
