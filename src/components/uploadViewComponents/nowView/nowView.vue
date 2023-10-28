@@ -147,6 +147,7 @@
             isBeforePageActive = true;
             isAfterPageActive = false;
             postText = '';
+            isOldDraftNum = null;
           "
         >
           <span style="font-size: 20px; color: black">直接退出</span>
@@ -199,9 +200,28 @@
         <span style="color: black; font-size: 20px">草稿箱</span>
       </div>
       <div class="draftsContent">
-        <div v-for="draftItem in postDraftsStore" :key="draftItem.id">
-          <div class="draftItem">
-            <span style="font-size: 12px;font-weight: 200;" > {{ draftItem }} </span>
+        <div v-for="(draftItem, index) in postDraftsStore" :key="draftItem.id">
+          <div class="draftItem" @click="openDraft(draftItem, index)">
+            <span style="font-size: 12px; font-weight: 200">
+              {{ draftItem }}
+            </span>
+            <button
+              style="
+                position: relative;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                border-radius: 20px;
+                background-color: brown;
+              "
+              @click.stop="deleteDrafts(index)"
+            >
+              <span style="font-size: 15px;font-family: inherit;">x</span>
+            </button>
           </div>
         </div>
       </div>
@@ -209,7 +229,7 @@
   </transition>
 </template>
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import router from "../../../router";
 
 let postText = ref("");
@@ -217,6 +237,8 @@ let saveDrafts = ref(false);
 let isDraftActive = ref(false);
 let isBeforePageActive = ref(true);
 let isAfterPageActive = ref(false);
+let isOldDraftNum = ref(null);
+let postDraftsStore = ref([]);
 
 function isBeforePageActiveChange() {
   isBeforePageActive.value = false;
@@ -238,27 +260,50 @@ function isAfterPageActiveChange() {
   }
 }
 
+function openDraft(draftItem, index) {
+  isOldDraftNum.value = index;
+  isDraftActive.value = false;
+  isAfterPageActive.value = true;
+  postText.value = draftItem;
+}
+
+watch(isOldDraftNum, () => {
+  console.log(isOldDraftNum.value);
+});
+
 function goBack() {
   router.go(-1);
 }
 
-let postDraftsStore = ref([]);
-
 onMounted(() => {
-  let postDrafts = localStorage.getItem("postDrafts").split(",");
+  let postDrafts = [];
+  if (localStorage.getItem("postDrafts")) {
+    postDrafts = localStorage.getItem("postDrafts").split(",");
+  }
   for (let item of postDrafts) {
-    console.log(item);
     postDraftsStore.value.push(item);
   }
 });
+
+function deleteDrafts(index){
+  console.log(index);
+  postDraftsStore.value.splice(index,1)
+  console.log(postDraftsStore.value);
+  localStorage.setItem("postDrafts",postDraftsStore.value)
+}
 
 function saveBack() {
   saveDrafts.value = false;
   isBeforePageActive.value = true;
   isAfterPageActive.value = false;
-  postDraftsStore.value.push(postText.value);
+  if (isOldDraftNum.value !== null) {
+    postDraftsStore.value[isOldDraftNum.value] = postText.value;
+  } else {
+    postDraftsStore.value.push(postText.value);
+  }
   localStorage.setItem("postDrafts", postDraftsStore.value);
   postText.value = "";
+  isOldDraftNum.value = null;
 }
 </script>
 <style>

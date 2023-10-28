@@ -26,6 +26,9 @@
 .saveDraftSlide-enter-active {
   transition: all 0.5s ease-out;
 }
+.saveDraftSlide-leave-active {
+  transition: all 0.5s ease-out;
+}
 
 .isActiveSaveDrafts {
   position: absolute;
@@ -40,14 +43,15 @@
   justify-content: center;
 }
 
-.draftsContent{
+.draftsContent {
   position: absolute;
   top: 60px;
   width: 100%;
   overflow: scroll;
   bottom: 0;
 }
-.draftItem{
+.draftItem {
+  display: flex;
   height: fit-content;
   width: 70%;
   margin: 3vh auto;
@@ -57,7 +61,9 @@
   border-radius: 15px;
   box-sizing: border-box;
   color: black;
-  background: linear-gradient(70deg,#CC95C0,#DBD4B4,#7AA1D2);
+  background: linear-gradient(70deg, #cc95c0, #dbd4b4, #7aa1d2);
+  justify-content: space-between;
+  align-items: center;
 }
 .draftsTop {
   height: 60px;
