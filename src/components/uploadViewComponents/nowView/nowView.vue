@@ -161,9 +161,9 @@
       </div>
     </div>
   </transition>
-  <transition>
-    <postDrafts></postDrafts>
-  </transition>
+  <!-- <transition> -->
+    <!-- <postDrafts></postDrafts> -->
+  <!-- </transition> -->
 </template>
 <script setup>
 import { ref } from "vue";
@@ -203,7 +203,7 @@ function saveBack() {
   postDraftsStore.value.push(postText.value);
   console.log(postDraftsStore.value);
   localStorage.setItem("postDrafts", postDraftsStore.value);
-  postText.value = null;
+  postText.value = "";
 }
 </script>
 <style>
