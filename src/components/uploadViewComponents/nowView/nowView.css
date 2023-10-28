@@ -5,7 +5,13 @@
 .afterPage-enter-active {
   transition: all 1.6s ease-out;
 }
-
+.draftsSlide-enter-from,
+.draftsSlide-leave-to {
+  opacity: 0;
+}
+.draftsSlide-enter-active {
+  transition: all 1.6s ease-out;
+}
 .beforePage-enter-from,
 .beforePage-leave-to {
   opacity: 0;
@@ -32,6 +38,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.draftsContent{
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  overflow: scroll;
+  bottom: 0;
+}
+.draftItem{
+  height: fit-content;
+  width: 70%;
+  margin: 3vh auto;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #e6e6e6;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: black;
+  background: linear-gradient(70deg,#CC95C0,#DBD4B4,#7AA1D2);
+}
+.draftsTop {
+  height: 60px;
+  width: 100%;
+  background-color: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.draftsContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
 }
 .saveDraftsContent {
   width: 50vw;

@@ -2,8 +2,8 @@
   <transition name="beforePage">
     <div
       class="nowBeforeViewContainer"
-      v-if="isActive === true"
-      @click="isActiveChangeFalse"
+      v-if="isBeforePageActive === true"
+      @click="isBeforePageActiveChange"
     >
       <div class="uploadViewTop" @click.stop="goBack">
         <svg
@@ -23,7 +23,13 @@
           ></path>
         </svg>
       </div>
-      <div class="draftsButtonContainer" @click.stop="goBack">
+      <div
+        class="draftsButtonContainer"
+        @click.stop="
+          isDraftActive = true;
+          isBeforePageActive = false;
+        "
+      >
         <button class="draftsButton">
           <svg
             t="1698455484900"
@@ -65,8 +71,8 @@
     </div>
   </transition>
   <transition name="afterPage">
-    <div class="nowAfterViewContainer" v-if="isActive === false">
-      <div class="uploadViewTop" @click="isActiveChange">
+    <div class="nowAfterViewContainer" v-if="isAfterPageActive">
+      <div class="uploadViewTop" @click="isAfterPageActiveChange">
         <svg
           t="1698454766725"
           class="icon"
@@ -138,7 +144,8 @@
           "
           @click.stop="
             saveDrafts = false;
-            isActive = true;
+            isBeforePageActive = true;
+            isAfterPageActive = false;
             postText = '';
           "
         >
@@ -161,33 +168,73 @@
       </div>
     </div>
   </transition>
-  <!-- <transition> -->
-    <!-- <postDrafts></postDrafts> -->
-  <!-- </transition> -->
+  <transition name="draftsSlide">
+    <div class="draftsContainer" v-if="isDraftActive">
+      <div class="draftsTop">
+        <svg
+          @click="isDraftActiveChange"
+          t="1698454766725"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="8788"
+          width="200"
+          height="200"
+          style="
+            height: 25px;
+            width: 25px;
+            margin-top: 5px;
+            position: absolute;
+            left: 0;
+            margin: 10px;
+          "
+        >
+          <path
+            d="M378.24 512l418.88 418.88L704 1024 192 512l512-512 93.12 93.12z"
+            fill="#2c2c2c"
+            p-id="8789"
+          ></path>
+        </svg>
+        <span style="color: black; font-size: 20px">草稿箱</span>
+      </div>
+      <div class="draftsContent">
+        <div v-for="draftItem in postDraftsStore" :key="draftItem.id">
+          <div class="draftItem">
+            <span style="font-size: 12px;font-weight: 200;" > {{ draftItem }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
 </template>
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import router from "../../../router";
-import postDrafts from "../postDrafts/postDrafts.vue";
 
 let postText = ref("");
-
 let saveDrafts = ref(false);
+let isDraftActive = ref(false);
+let isBeforePageActive = ref(true);
+let isAfterPageActive = ref(false);
 
-function isActiveChangeFalse() {
-  isActive.value = !isActive.value;
+function isBeforePageActiveChange() {
+  isBeforePageActive.value = false;
+  isAfterPageActive.value = true;
 }
 
-let isActive = ref(true);
-function isActiveChange() {
+function isDraftActiveChange() {
+  isDraftActive.value = false;
+  isBeforePageActive.value = true;
+}
+
+function isAfterPageActiveChange() {
   if (postText.value === "") {
-    isActive.value = !isActive.value;
+    isBeforePageActive.value = true;
+    isAfterPageActive.value = false;
     saveDrafts.value = false;
-    console.log(isActive.value);
-    console.log(saveDrafts.value);
   } else {
     saveDrafts.value = true;
-    console.log(saveDrafts.value);
   }
 }
 
@@ -197,11 +244,19 @@ function goBack() {
 
 let postDraftsStore = ref([]);
 
+onMounted(() => {
+  let postDrafts = localStorage.getItem("postDrafts").split(",");
+  for (let item of postDrafts) {
+    console.log(item);
+    postDraftsStore.value.push(item);
+  }
+});
+
 function saveBack() {
   saveDrafts.value = false;
-  isActive.value = true;
+  isBeforePageActive.value = true;
+  isAfterPageActive.value = false;
   postDraftsStore.value.push(postText.value);
-  console.log(postDraftsStore.value);
   localStorage.setItem("postDrafts", postDraftsStore.value);
   postText.value = "";
 }
