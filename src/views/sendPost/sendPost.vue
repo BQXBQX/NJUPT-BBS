@@ -187,32 +187,42 @@
   </transition>
 </template>
 <script setup>
+import { useRoute } from "vue-router";
 import router from "../../router";
 import { onMounted, ref } from "vue";
 
-const postImgs = ref([
-  "https://th.bing.com/th/id/OIP.V-wcgYVBVqxeBnXtFH8AhwHaKw?pid=ImgDet&rs=1",
-  "https://i.pinimg.com/originals/f1/fe/88/f1fe88148a36db3b44288944ead3feac.png",
-  "https://i.75ll.com/up/64/a9/01/1b864a1ee14a8ffd2735f8087d01a964.jpg",
-]);
+const postImgs = ref([]);
 // const postImgs = ref([
-
+//   "https://i01piccdn.sogoucdn.com/7e5a6939fb641dd4",
+//   "https://oss.1381801.com/forum/202210/05/085631b0n166urt6rufkkn.jpg"
 // ])
 let postTitle = ref("");
 let postText = ref("");
 let isNoticeActive = ref(false);
 let isBackActive = ref(false);
 let postContent = ref({});
-let postContentStorage = ref([])
+let postContentStorage = ref([]);
+let routerPath = ref();
 
 onMounted(() => {
-  let message = localStorage.getItem("postDraftsContent")
-  if(message)
-  {
+  let message = localStorage.getItem("postDraftsContent");
+  if (message) {
     postContentStorage.value = JSON.parse(message);
     console.log(postContentStorage.value);
   }
   console.log(postContentStorage.value);
+
+  const route = useRoute();
+  if (decodeURIComponent(route.path).split("/")[2]) {
+    routerPath.value = decodeURIComponent(route.path).split("/")[2];
+    let draftMessage = JSON.parse(localStorage.getItem("postDraftsContent"))[
+      routerPath.value
+    ];
+    console.log(draftMessage.postImgs);
+    postImgs.value = draftMessage.postImgs;
+    postTitle.value = draftMessage.postTitle;
+    postText.value = draftMessage.postText;
+  }
 });
 
 function isNoticeActiveTrue() {
@@ -225,8 +235,8 @@ function isNoticeActiveFalse() {
 function isBackActiveJudge() {
   if (
     postImgs.value.length === 0 &&
-    postTitle.value === undefined &&
-    postText.value === undefined
+    postTitle.value === "" &&
+    postText.value === ""
   ) {
     router.go(-1);
   } else {
@@ -235,9 +245,16 @@ function isBackActiveJudge() {
       postTitle: postTitle.value,
       postText: postText.value,
     };
-    postContentStorage.value.push(postContent.value)
-    let messageString = JSON.stringify(postContentStorage.value)
-    localStorage.setItem('postDraftsContent',messageString)
+    if (routerPath.value !== undefined) {
+      console.log(routerPath.value);
+      postContentStorage.value[routerPath.value] = postContent.value
+      console.log(postContent.value);
+    } else {
+      console.log(routerPath.value);
+      postContentStorage.value.push(postContent.value);
+    }
+    let messageString = JSON.stringify(postContentStorage.value);
+    localStorage.setItem("postDraftsContent", messageString);
   }
 }
 </script>
