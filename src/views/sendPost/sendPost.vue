@@ -2,7 +2,7 @@
   <div class="sendPostContainer">
     <div class="sendPostTop">
       <svg
-        @click="router.go(-1)"
+        @click="isBackActiveJudge"
         t="1698540996137"
         class="icon"
         viewBox="0 0 1024 1024"
@@ -48,40 +48,17 @@
     </div>
     <div class="sendPostContent">
       <div class="sendPostImgContainer">
-        <div class="imgItem">
-          <img
-            src="https://i.pinimg.com/originals/f1/fe/88/f1fe88148a36db3b44288944ead3feac.png"
-            alt=""
-          />
-        </div>
-        <div class="imgItem">
-          <img
-            src="https://i.75ll.com/up/64/a9/01/1b864a1ee14a8ffd2735f8087d01a964.jpg"
-            alt=""
-          />
-        </div>
-        <div class="imgItem">
-          <img
-            src="https://th.bing.com/th/id/OIP.V-wcgYVBVqxeBnXtFH8AhwHaKw?pid=ImgDet&rs=1"
-            alt=""
-          />
-        </div>
-        <div class="imgItem">
-          <img
-            src="https://th.bing.com/th/id/R.775f0eeed8f65791a1c75adb2e5f1e2f?rik=BB3NfbqZIFPGYA&riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f6%2f68%2fe2ac965866.jpg&ehk=s9ba62nvyHSFtRAwXpvt5zV3IExEkqKXTc%2b7n1bVgN8%3d&risl=&pid=ImgRaw&r=0"
-            alt=""
-          />
-        </div>
-        <div class="imgItem">
-          <img
-            src="https://th.bing.com/th/id/R.cd06f32d7746c9ab4530773532699bf8?rik=tcYJd2L1Ts5%2bFw&riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f6%2fec%2f82327067f6.jpg&ehk=U24paee2jLtNghtVQ3pNarnaMybVbCvNJ4D27xMSp1w%3d&risl=&pid=ImgRaw&r=0"
-            alt=""
-          />
+        <div v-for="(item, index) in postImgs" :key="item.id" class="imgItem">
+          <img :src="item" :alt="index" />
         </div>
         <div class="moreImg">+</div>
       </div>
       <div class="titleContainer">
-        <input type="text" placeholder="填寫標題會有更多贊哦~" />
+        <input
+          type="text"
+          v-model="postTitle"
+          placeholder="填寫標題會有更多贊哦~"
+        />
       </div>
       <div class="sendPostSelectPartition">
         <select>
@@ -98,6 +75,7 @@
           cols="30"
           rows="10"
           placeholder="新增正文"
+          v-model="postText"
         ></textarea>
       </div>
     </div>
@@ -189,18 +167,78 @@
       </div>
     </div>
   </transition>
+  <transition name="backSlide">
+    <div
+      class="isActiveBackContainer"
+      v-if="isBackActive"
+      @click="isBackActive = false"
+    >
+      <div class="isActiveBack">
+        <div class="topSpan">
+          <span style="font-size: 22px; color: gray" @click.stop=""
+            >要保存草稿吗？</span
+          >
+          <span style="font-size: 20px" @click.stop="">直接退出</span>
+          <span style="font-size: 20px" @click.stop="">保存退出</span>
+        </div>
+        <span class="bottomSpan">取消</span>
+      </div>
+    </div>
+  </transition>
 </template>
 <script setup>
 import router from "../../router";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
+const postImgs = ref([
+  "https://th.bing.com/th/id/OIP.V-wcgYVBVqxeBnXtFH8AhwHaKw?pid=ImgDet&rs=1",
+  "https://i.pinimg.com/originals/f1/fe/88/f1fe88148a36db3b44288944ead3feac.png",
+  "https://i.75ll.com/up/64/a9/01/1b864a1ee14a8ffd2735f8087d01a964.jpg",
+]);
+// const postImgs = ref([
+
+// ])
+let postTitle = ref("");
+let postText = ref("");
 let isNoticeActive = ref(false);
+let isBackActive = ref(false);
+let postContent = ref({});
+let postContentStorage = ref([])
+
+onMounted(() => {
+  let message = localStorage.getItem("postDraftsContent")
+  if(message)
+  {
+    postContentStorage.value = JSON.parse(message);
+    console.log(postContentStorage.value);
+  }
+  console.log(postContentStorage.value);
+});
 
 function isNoticeActiveTrue() {
   isNoticeActive.value = true;
 }
 function isNoticeActiveFalse() {
   isNoticeActive.value = false;
+}
+
+function isBackActiveJudge() {
+  if (
+    postImgs.value.length === 0 &&
+    postTitle.value === undefined &&
+    postText.value === undefined
+  ) {
+    router.go(-1);
+  } else {
+    postContent.value = {
+      postImgs: postImgs.value,
+      postTitle: postTitle.value,
+      postText: postText.value,
+    };
+    postContentStorage.value.push(postContent.value)
+    let messageString = JSON.stringify(postContentStorage.value)
+    localStorage.setItem('postDraftsContent',messageString)
+  }
 }
 </script>
 <style scoped>

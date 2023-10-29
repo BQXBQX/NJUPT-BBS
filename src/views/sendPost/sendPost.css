@@ -72,7 +72,50 @@ span {
   margin: 2px;
   box-sizing: border-box;
 }
-
+.isActiveBackContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.topSpan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: white;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.bottomSpan {
+  font-size: 20px;
+  color: gray;
+  background-color: white;
+  width: 100%;
+  border-radius: 15px;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isActiveBack {
+  height: fit-content;
+  width: 60vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 img {
   width: 25vh;
   height: 25vh;
@@ -135,6 +178,15 @@ input::placeholder {
 }
 .noticeSlide-enter-active,
 .noticeSlide-leave-active {
+  transition: all 0.5s ease-out;
+}
+
+.backSlide-enter-from,
+.backSlide-leave-to {
+  opacity: 0;
+}
+.backSlide-enter-active,
+.backSlide-leave-active {
   transition: all 0.5s ease-out;
 }
 select {
