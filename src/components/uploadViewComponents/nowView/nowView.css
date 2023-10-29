@@ -228,3 +228,14 @@
   height: 120vw;
   white-space: pre-wrap;
 }
+.nextButton{
+  position: absolute;
+  top:0;
+  right: 0;
+  margin: 8px;
+  height: 45px;
+  background: linear-gradient(80deg,#ff626e,#ffbe71);
+  color: black;
+  border-radius: 22.5PX;
+  border: 0;
+}

@@ -91,6 +91,7 @@
           ></path>
         </svg>
       </div>
+      <button class="nextButton" @click="router.push('sendPost')">下一步</button>
       <div class="backgroundAfter"></div>
       <textarea
         v-model="postText"
@@ -202,7 +203,7 @@
       <div class="draftsContent">
         <div v-for="(draftItem, index) in postDraftsStore" :key="draftItem.id">
           <div class="draftItem" @click="openDraft(draftItem, index)">
-            <span style="font-size: 12px; font-weight: 200;width: 70%;">
+            <span style="font-size: 12px; font-weight: 200; width: 70%">
               {{ draftItem }}
             </span>
             <button
@@ -220,7 +221,7 @@
               "
               @click.stop="deleteDrafts(index)"
             >
-              <span style="font-size: 15px;font-family: inherit;">x</span>
+              <span style="font-size: 15px; font-family: inherit">x</span>
             </button>
           </div>
         </div>
@@ -285,11 +286,11 @@ onMounted(() => {
   }
 });
 
-function deleteDrafts(index){
+function deleteDrafts(index) {
   console.log(index);
-  postDraftsStore.value.splice(index,1)
+  postDraftsStore.value.splice(index, 1);
   console.log(postDraftsStore.value);
-  localStorage.setItem("postDrafts",postDraftsStore.value)
+  localStorage.setItem("postDrafts", postDraftsStore.value);
 }
 
 function saveBack() {
