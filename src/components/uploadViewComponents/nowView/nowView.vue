@@ -2,8 +2,8 @@
   <transition name="beforePage">
     <div
       class="nowBeforeViewContainer"
-      v-if="isActive === true"
-      @click="isActiveChangeFalse"
+      v-if="isBeforePageActive === true"
+      @click="isBeforePageActiveChange"
     >
       <div class="uploadViewTop" @click.stop="goBack">
         <svg
@@ -23,7 +23,13 @@
           ></path>
         </svg>
       </div>
-      <div class="draftsButtonContainer" @click.stop="goBack">
+      <div
+        class="draftsButtonContainer"
+        @click.stop="
+          isDraftActive = true;
+          isBeforePageActive = false;
+        "
+      >
         <button class="draftsButton">
           <svg
             t="1698455484900"
@@ -65,8 +71,8 @@
     </div>
   </transition>
   <transition name="afterPage">
-    <div class="nowAfterViewContainer" v-if="isActive === false">
-      <div class="uploadViewTop" @click="isActiveChange">
+    <div class="nowAfterViewContainer" v-if="isAfterPageActive">
+      <div class="uploadViewTop" @click="isAfterPageActiveChange">
         <svg
           t="1698454766725"
           class="icon"
@@ -85,6 +91,7 @@
           ></path>
         </svg>
       </div>
+      <button class="nextButton" @click="router.push('sendPost')">下一步</button>
       <div class="backgroundAfter"></div>
       <textarea
         v-model="postText"
@@ -138,8 +145,10 @@
           "
           @click.stop="
             saveDrafts = false;
-            isActive = true;
+            isBeforePageActive = true;
+            isAfterPageActive = false;
             postText = '';
+            isOldDraftNum = null;
           "
         >
           <span style="font-size: 20px; color: black">直接退出</span>
@@ -161,49 +170,141 @@
       </div>
     </div>
   </transition>
-  <!-- <transition> -->
-    <!-- <postDrafts></postDrafts> -->
-  <!-- </transition> -->
+  <transition name="draftsSlide">
+    <div class="draftsContainer" v-if="isDraftActive">
+      <div class="draftsTop">
+        <svg
+          @click="isDraftActiveChange"
+          t="1698454766725"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="8788"
+          width="200"
+          height="200"
+          style="
+            height: 25px;
+            width: 25px;
+            margin-top: 5px;
+            position: absolute;
+            left: 0;
+            margin: 10px;
+          "
+        >
+          <path
+            d="M378.24 512l418.88 418.88L704 1024 192 512l512-512 93.12 93.12z"
+            fill="#2c2c2c"
+            p-id="8789"
+          ></path>
+        </svg>
+        <span style="color: black; font-size: 20px">草稿箱</span>
+      </div>
+      <div class="draftsContent">
+        <div v-for="(draftItem, index) in postDraftsStore" :key="draftItem.id">
+          <div class="draftItem" @click="openDraft(draftItem, index)">
+            <span style="font-size: 12px; font-weight: 200; width: 70%">
+              {{ draftItem }}
+            </span>
+            <button
+              style="
+                position: relative;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                border-radius: 20px;
+                background-color: brown;
+              "
+              @click.stop="deleteDrafts(index)"
+            >
+              <span style="font-size: 15px; font-family: inherit">x</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
 </template>
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import router from "../../../router";
-import postDrafts from "../postDrafts/postDrafts.vue";
 
 let postText = ref("");
-
 let saveDrafts = ref(false);
+let isDraftActive = ref(false);
+let isBeforePageActive = ref(true);
+let isAfterPageActive = ref(false);
+let isOldDraftNum = ref(null);
+let postDraftsStore = ref([]);
 
-function isActiveChangeFalse() {
-  isActive.value = !isActive.value;
+function isBeforePageActiveChange() {
+  isBeforePageActive.value = false;
+  isAfterPageActive.value = true;
 }
 
-let isActive = ref(true);
-function isActiveChange() {
+function isDraftActiveChange() {
+  isDraftActive.value = false;
+  isBeforePageActive.value = true;
+}
+
+function isAfterPageActiveChange() {
   if (postText.value === "") {
-    isActive.value = !isActive.value;
+    isBeforePageActive.value = true;
+    isAfterPageActive.value = false;
     saveDrafts.value = false;
-    console.log(isActive.value);
-    console.log(saveDrafts.value);
   } else {
     saveDrafts.value = true;
-    console.log(saveDrafts.value);
   }
 }
+
+function openDraft(draftItem, index) {
+  isOldDraftNum.value = index;
+  isDraftActive.value = false;
+  isAfterPageActive.value = true;
+  postText.value = draftItem;
+}
+
+watch(isOldDraftNum, () => {
+  console.log(isOldDraftNum.value);
+});
 
 function goBack() {
   router.go(-1);
 }
 
-let postDraftsStore = ref([]);
+onMounted(() => {
+  let postDrafts = [];
+  if (localStorage.getItem("postDrafts")) {
+    postDrafts = localStorage.getItem("postDrafts").split(",");
+  }
+  for (let item of postDrafts) {
+    postDraftsStore.value.push(item);
+  }
+});
+
+function deleteDrafts(index) {
+  console.log(index);
+  postDraftsStore.value.splice(index, 1);
+  console.log(postDraftsStore.value);
+  localStorage.setItem("postDrafts", postDraftsStore.value);
+}
 
 function saveBack() {
   saveDrafts.value = false;
-  isActive.value = true;
-  postDraftsStore.value.push(postText.value);
-  console.log(postDraftsStore.value);
+  isBeforePageActive.value = true;
+  isAfterPageActive.value = false;
+  if (isOldDraftNum.value !== null) {
+    postDraftsStore.value[isOldDraftNum.value] = postText.value;
+  } else {
+    postDraftsStore.value.push(postText.value);
+  }
   localStorage.setItem("postDrafts", postDraftsStore.value);
   postText.value = "";
+  isOldDraftNum.value = null;
 }
 </script>
 <style>

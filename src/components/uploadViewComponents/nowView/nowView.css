@@ -5,7 +5,13 @@
 .afterPage-enter-active {
   transition: all 1.6s ease-out;
 }
-
+.draftsSlide-enter-from,
+.draftsSlide-leave-to {
+  opacity: 0;
+}
+.draftsSlide-enter-active {
+  transition: all 1.6s ease-out;
+}
 .beforePage-enter-from,
 .beforePage-leave-to {
   opacity: 0;
@@ -20,6 +26,9 @@
 .saveDraftSlide-enter-active {
   transition: all 0.5s ease-out;
 }
+.saveDraftSlide-leave-active {
+  transition: all 0.5s ease-out;
+}
 
 .isActiveSaveDrafts {
   position: absolute;
@@ -32,6 +41,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.draftsContent {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  overflow: scroll;
+  bottom: 0;
+}
+.draftItem {
+  display: flex;
+  height: fit-content;
+  overflow: hidden;
+  word-wrap: break-word;
+  width: 70%;
+  margin: 3vh auto;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #e6e6e6;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: black;
+  background: linear-gradient(70deg, #cc95c0, #dbd4b4, #7aa1d2);
+  justify-content: space-between;
+  align-items: center;
+}
+.draftsTop {
+  height: 60px;
+  width: 100%;
+  background-color: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.draftsContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
 }
 .saveDraftsContent {
   width: 50vw;
@@ -177,4 +227,15 @@
   max-width: 80vw;
   height: 120vw;
   white-space: pre-wrap;
+}
+.nextButton{
+  position: absolute;
+  top:0;
+  right: 0;
+  margin: 8px;
+  height: 45px;
+  background: linear-gradient(80deg,#ff626e,#ffbe71);
+  color: black;
+  border-radius: 22.5PX;
+  border: 0;
 }

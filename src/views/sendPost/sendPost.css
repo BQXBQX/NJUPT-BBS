@@ -1,0 +1,231 @@
+.sendPostContent {
+  position: absolute;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.noticeContent {
+  width: 90%;
+  margin-top: 10px;
+}
+.sendPostTop {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 10px gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.sendPostButtonContainer {
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  position: fixed;
+  height: 75px;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+span {
+  color: black;
+}
+.sendPostContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #e6e6e6;
+}
+.sendPostImgContainer {
+  padding: 0 2vw;
+  box-sizing: border-box;
+  background-color: white;
+  top: 70px;
+  height: 26vh;
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 10px;
+}
+.imgItem {
+  width: 25vh;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+  box-sizing: border-box;
+}
+.isActiveBackContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.topSpan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: white;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.bottomSpan {
+  font-size: 20px;
+  color: gray;
+  background-color: white;
+  width: 100%;
+  border-radius: 15px;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isActiveBack {
+  height: fit-content;
+  width: 60vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+img {
+  width: 25vh;
+  height: 25vh;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.sendPostNoticeContainer {
+  display: flex;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+.moreImg {
+  height: 25vh;
+  min-width: 25vh;
+  background-color: #e6e6e6;
+  border-radius: 15px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleContainer {
+  height: 50px;
+  width: 100%;
+  top: 35vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background-color: transparent;
+  width: 90%;
+  outline: none;
+  color: black;
+  font-size: 20px;
+}
+input::placeholder {
+  color: gray;
+}
+.sendPostSelectPartition {
+  width: 100%;
+  height: 50px;
+  top: 42vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noticeSlide-enter-from,
+.noticeSlide-leave-to {
+  opacity: 0;
+}
+.noticeSlide-enter-active,
+.noticeSlide-leave-active {
+  transition: all 0.5s ease-out;
+}
+
+.backSlide-enter-from,
+.backSlide-leave-to {
+  opacity: 0;
+}
+.backSlide-enter-active,
+.backSlide-leave-active {
+  transition: all 0.5s ease-out;
+}
+select {
+  width: 90%;
+  background-color: transparent;
+  outline: none;
+  color: black;
+  height: 50px;
+  border: 0;
+  font-size: 15px;
+}
+.sendPostTextContent {
+  background-color: white;
+  width: 100%;
+  height: 40vh;
+  top: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+textarea {
+  height: 300px;
+  height: 90%;
+  width: 90%;
+  outline: none;
+  background-color: transparent;
+  border: 0;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+}
+.sendPostNotice {
+  display: flex;
+  background-color: white;
+  height: fit-content;
+  width: 80vw;
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}

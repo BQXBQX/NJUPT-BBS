@@ -18,6 +18,8 @@ import UserMessage from "../views/userMessage/userMessage.vue";
 import SearchView from "../views/searchView/searchView.vue";
 import MyPost from "../views/myPost/myPost.vue";
 import history from "../views/history/history.vue";
+import SendPost from "../views/sendPost/sendPost.vue"
+import draft from "../views/postDrafts/postDrafts.vue"
 
 const routes = [
   // 路由的默认路径
@@ -29,6 +31,14 @@ const routes = [
   {
     path:"/welcome",
     component: welcome
+  },
+  {
+    path:"/drafts",
+    component: draft
+  },
+  {
+    path:"/sendPost",
+    component: SendPost
   },
   {
     path: "/upload",
