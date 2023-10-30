@@ -37,7 +37,7 @@ const routes = [
     component: draft
   },
   {
-    path:"/sendPost",
+    path:"/sendPost/:index?",
     component: SendPost
   },
   {

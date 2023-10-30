@@ -36,7 +36,7 @@
       </svg>
     </div>
     <div class="postDraftsContent">
-      <div v-for="(item, index) in draftsContent" :key="item.id" class="postDraftItem">
+      <div v-for="(item, index) in draftsContent" :key="item.id" class="postDraftItem" @click="router.push('/sendpost/'+index)">
         <img :src="item.postImgs[0]" alt="imgItem" />
         <div class="spanContainer">
           <span
@@ -47,7 +47,7 @@
               padding: 0 8px;
               text-align: start;
               font-family: inherit;
-              -webkit-line-clamp: 2; /* 设置最大行数为2行 */
+              -webkit-line-clamp: 2; 
               -webkit-box-orient: vertical;
               display: inline-block;
               overflow: hidden;
@@ -95,7 +95,7 @@
                 align-items: center;
                 font-family: inherit;
               "
-              @click="deleteDraft(index)"
+              @click.stop="deleteDraft(index)"
               >x</span
             >
           </div>
@@ -107,6 +107,7 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
+import router from "../../router";
 
 let draftsContent = ref([]);
 
@@ -116,7 +117,7 @@ onMounted(() => {
 });
 
 function deleteDraft(index) {
-  draftsContent.value = draftsContent.value.splice(index+1);
+  draftsContent.value.splice(index,1);
   let messageString = JSON.stringify(draftsContent.value)
   localStorage.setItem('postDraftsContent',messageString)
 
