@@ -54,9 +54,14 @@ import router from "../../router";
 let isWelcomeActive = ref(true);
 
 onMounted(() => {
+  let message = localStorage.getItem("postDraftsContent");
+  if (message) {
+  } else {
+    localStorage.setItem("postDraftsContent",[])
+  }
   setTimeout(() => {
     isWelcomeActive.value = false;
-    router.push("login")
+    router.push("login");
   }, 3000);
 });
 </script>

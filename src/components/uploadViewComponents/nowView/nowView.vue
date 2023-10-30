@@ -91,7 +91,7 @@
           ></path>
         </svg>
       </div>
-      <button class="nextButton" @click="router.push('sendPost')">下一步</button>
+      <button class="nextButton" @click="toSendPost">下一步</button>
       <div class="backgroundAfter"></div>
       <textarea
         v-model="postText"
@@ -259,6 +259,20 @@ function isAfterPageActiveChange() {
   } else {
     saveDrafts.value = true;
   }
+}
+
+function toSendPost() {
+  const PostMessage = {
+    postImgs: [],
+    postTitle: "",
+    postText: postText.value,
+  };
+  console.log(PostMessage);
+  let PostMessageStorage = JSON.parse(
+    localStorage.getItem("postDraftsContent")
+  );
+  PostMessageStorage.push(PostMessage);
+  localStorage.setItem("postDraftsContent",PostMessageStorage)
 }
 
 function openDraft(draftItem, index) {

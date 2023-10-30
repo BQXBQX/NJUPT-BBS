@@ -47,7 +47,7 @@
               padding: 0 8px;
               text-align: start;
               font-family: inherit;
-              -webkit-line-clamp: 2; /* 设置最大行数为2行 */
+              -webkit-line-clamp: 2; 
               -webkit-box-orient: vertical;
               display: inline-block;
               overflow: hidden;

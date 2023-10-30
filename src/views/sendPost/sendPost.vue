@@ -178,8 +178,8 @@
           <span style="font-size: 22px; color: gray" @click.stop=""
             >要保存草稿吗？</span
           >
-          <span style="font-size: 20px" @click.stop="">直接退出</span>
-          <span style="font-size: 20px" @click.stop="">保存退出</span>
+          <span style="font-size: 20px" @click.stop="router.go(-1)">直接退出</span>
+          <span style="font-size: 20px" @click.stop="saveBack">保存退出</span>
         </div>
         <span class="bottomSpan">取消</span>
       </div>
@@ -211,7 +211,7 @@ onMounted(() => {
     console.log(postContentStorage.value);
   }
   console.log(postContentStorage.value);
-
+  
   const route = useRoute();
   if (decodeURIComponent(route.path).split("/")[2]) {
     routerPath.value = decodeURIComponent(route.path).split("/")[2];
@@ -240,22 +240,27 @@ function isBackActiveJudge() {
   ) {
     router.go(-1);
   } else {
-    postContent.value = {
-      postImgs: postImgs.value,
-      postTitle: postTitle.value,
-      postText: postText.value,
-    };
-    if (routerPath.value !== undefined) {
-      console.log(routerPath.value);
-      postContentStorage.value[routerPath.value] = postContent.value
-      console.log(postContent.value);
-    } else {
-      console.log(routerPath.value);
-      postContentStorage.value.push(postContent.value);
-    }
-    let messageString = JSON.stringify(postContentStorage.value);
-    localStorage.setItem("postDraftsContent", messageString);
+    isBackActive.value = true;
   }
+}
+
+function saveBack() {
+  postContent.value = {
+    postImgs: postImgs.value,
+    postTitle: postTitle.value,
+    postText: postText.value,
+  };
+  if (routerPath.value !== undefined) {
+    console.log(routerPath.value);
+    postContentStorage.value[routerPath.value] = postContent.value;
+    console.log(postContent.value);
+  } else {
+    console.log(routerPath.value);
+    postContentStorage.value.push(postContent.value);
+  }
+  let messageString = JSON.stringify(postContentStorage.value);
+  localStorage.setItem("postDraftsContent", messageString);
+  router.go(-1);
 }
 </script>
 <style scoped>
